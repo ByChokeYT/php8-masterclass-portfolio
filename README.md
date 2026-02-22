@@ -9,43 +9,43 @@
 
 ### Nivel 1: Fundamentos
 
-#### [01 - Calculadora de Minerales](./01-calculadora-minerales)
+#### [Día 01 - Calculadora de Minerales](./dia-1-calculadora-minerales)
 **Concepto:** Introducción a PHP básico  
 **Tecnologías:** Enums, Clases, Sesiones, PRG Pattern  
 **UI:** Glassmorphism, Gradientes, Fintech Theme  
 🚀 Puerto: `8000`
 
-#### [02 - Conversor de Divisas](./02-conversor-divisas)
+#### [Día 02 - Conversor de Divisas](./dia-2-conversor-divisas)
 **Concepto:** Enums y servicios  
 **Tecnologías:** Currency Enum, ConverterService, Historial  
 **UI:** Trading Card Layout, Monospace Typography  
 🚀 Puerto: `8000`
 
-#### [03 - Gestor de Gastos](./03-gestor-gastos)
+#### [Día 03 - Gestor de Gastos](./dia-3-gestor-gastos)
 **Concepto:** DTOs y gestión de sesiones  
 **Tecnologías:** Transaction DTO, BudgetManager, Session Persistence  
 **UI:** Dashboard Financiero, Sidebar Layout  
 🚀 Puerto: `8080`
 
-#### [04 - Simulador de Préstamos](./04-simulador-prestamos)
+#### [Día 04 - Simulador de Préstamos](./dia-4-simulador-prestamos)
 **Concepto:** Cálculos matemáticos complejos  
 **Tecnologías:** Amortización Francesa, Sliders Interactivos  
 **UI:** Bank Fintech Theme, Tabla de Amortización  
 🚀 Puerto: `8081`
 
-#### [05 - Calculadora de IMC](./05-calculadora-imc)
+#### [Día 05 - Calculadora de IMC](./dia-5-calculadora-imc)
 **Concepto:** Tipos de datos y validación estricta  
 **Tecnologías:** `match` expressions, Constructor Promotion, `readonly`  
 **UI:** HealthTech Theme, Escala Visual de Colores  
 🚀 Puerto: `8082`
 
-#### [06 - Reloj en Tiempo Real](./06-reloj-tiempo-real)
+#### [Día 06 - Reloj en Tiempo Real](./dia-6-reloj-tiempo-real)
 **Concepto:** Bucles y actualización continua  
 **Tecnologías:** `while(true)`, ANSI codes, JavaScript `setInterval()`  
 **UI:** Reloj Digital + Clima de Oruro (API Open-Meteo)  
 🚀 Puerto: `8083` | CLI: `php reloj.php`
 
-#### [07 - Analizador de Texto](./07-analizador-texto)
+#### [Día 07 - Analizador de Texto](./dia-7-analizador-texto)
 **Concepto:** Procesamiento de strings y regex  
 **Tecnologías:** `str_word_count()`, `mb_strlen()`, `preg_match_all()`  
 **UI:** Grid 2 Columnas, Análisis en Tiempo Real  
@@ -110,7 +110,7 @@ Todos los proyectos siguen estos principios:
 
 ```bash
 # Ejemplo: Proyecto 07
-cd 07-analizador-texto
+cd dia-7-analizador-texto
 php -S localhost:8084 -t public
 ```
 

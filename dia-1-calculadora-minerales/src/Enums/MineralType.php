@@ -6,14 +6,13 @@ namespace App\Enums;
 
 /**
  * Enumeración para los tipos de minerales soportados.
- * Usamos un Enum respaldado por string (String Backed Enum) para facilitar la visualización.
+ * Usamos un Enum respaldado por string.
  */
 enum MineralType: string
 {
     case ESTANO = 'Estaño';
     case ZINC = 'Zinc';
     case PLATA = 'Plata';
-    case ORO = 'Oro';
 
     /**
      * Obtener el símbolo químico o abreviatura.
@@ -24,7 +23,6 @@ enum MineralType: string
             self::ESTANO => 'Sn',
             self::ZINC => 'Zn',
             self::PLATA => 'Ag',
-            self::ORO => 'Au',
         };
     }
 
@@ -34,10 +32,9 @@ enum MineralType: string
     public function getEmoji(): string
     {
         return match($this) {
-            self::ESTANO => '📦',  // Paquete/Lingote (Representación genérica)
-            self::ZINC => '🏗️',    // Estructuras (Galvanizado)
-            self::PLATA => '🪙',   // Moneda (Plata)
-            self::ORO => '⚜️',     // Lujo (Flor de Lis)
+            self::ESTANO => '📦',  
+            self::ZINC => '🏗️',    
+            self::PLATA => '🪙',   
         };
     }
 }
