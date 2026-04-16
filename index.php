@@ -1,228 +1,287 @@
 <?php
 declare(strict_types=1);
 
-$proyectos = [
-    [
-        'id' => '01',
-        'folder' => '01-calculadora-minerales',
-        'title' => 'Calculadora de Minerales',
-        'description' => 'Cálculo de leyes y valores para Estaño y Zinc.',
-        'icon' => '💎'
-    ],
-    [
-        'id' => '02',
-        'folder' => '02-conversor-divisas',
-        'title' => 'Conversor de Divisas',
-        'description' => 'Conversión de Bolivianos a USD con tasa fija.',
-        'icon' => '💱'
-    ],
-    [
-        'id' => '03',
-        'folder' => '03-gestor-gastos',
-        'title' => 'Gestor de Gastos',
-        'description' => 'Registro y control de gastos personales diarios.',
-        'icon' => '📉'
-    ],
-    [
-        'id' => '04',
-        'folder' => '04-simulador-prestamos',
-        'title' => 'Simulador de Préstamos',
-        'description' => 'Cálculo de cuotas mensuales con interés compuesto.',
-        'icon' => '🏦'
-    ],
-    [
-        'id' => '05',
-        'folder' => '05-calculadora-imc',
-        'title' => 'Calculadora de IMC',
-        'description' => 'Cálculo del Índice de Masa Corporal con salud.',
-        'icon' => '⚖️'
-    ],
-    [
-        'id' => '06',
-        'folder' => '06-reloj-tiempo-real',
-        'title' => 'Reloj en Tiempo Real',
-        'description' => 'Reloj dinámico usando PHP y funciones de tiempo.',
-        'icon' => '⏱️'
-    ],
-    [
-        'id' => '07',
-        'folder' => '07-analizador-texto',
-        'title' => 'Analizador de Texto',
-        'description' => 'Cuenta palabras, caracteres y lee textos largos.',
-        'icon' => '📝'
-    ],
-    [
-        'id' => '08',
-        'folder' => '08-adivina-numero',
-        'title' => 'Adivina el Número',
-        'description' => 'Juego interactivo usando la sesión de PHP.',
-        'icon' => '🎲'
-    ],
-    [
-        'id' => '09',
-        'folder' => '09-validador-email',
-        'title' => 'Validador de Correos',
-        'description' => 'Validador con expresiones regulares y DNS MX.',
-        'icon' => '📧'
-    ],
-    [
-        'id' => '10',
-        'folder' => '10-simulador-cajero',
-        'title' => 'Simulador de Cajero ATM',
-        'description' => 'Manejo de saldo, retiros y depósitos interactivos.',
-        'icon' => '💳'
-    ],
-];
+/**
+ * MASTERCLASS PHP 8.5 - CENTRAL HUB
+ * Interfaz Industrial de Alta Fidelidad para el Portfolio Global.
+ */
+
+readonly class ProjectNode {
+    public function __construct(
+        public string $id,
+        public string $day,
+        public string $title,
+        public string $path,
+        public string $icon,
+        public string $status = 'OPERATIONAL'
+    ) {}
+}
+
+// Escaneo dinámico de proyectos
+$projects = [];
+$iterator = new DirectoryIterator(__DIR__);
+
+foreach ($iterator as $fileInfo) {
+    if ($fileInfo->isDir() && !$fileInfo->isDot() && str_starts_with($fileInfo->getFilename(), 'dia-')) {
+        $folderName = $fileInfo->getFilename();
+        
+        // Parsing de nombre: dia-1-calculadora-minerales -> Dia 1, Calculadora Minerales
+        $parts = explode('-', $folderName);
+        $dayNum = $parts[1] ?? '??';
+        $rawTitle = implode(' ', array_slice($parts, 2));
+        $cleanTitle = ucwords(str_replace('-', ' ', $rawTitle));
+
+        // Detección de ruta index (public/index.php vs index.php)
+        $indexPath = "/{$folderName}/index.php";
+        if (file_exists(__DIR__ . "/{$folderName}/public/index.php")) {
+            $indexPath = "/{$folderName}/public/index.php";
+        }
+
+        // Mapeo selectivo de iconos basados en el título o día
+        $icon = match(true) {
+            str_contains(strtolower($cleanTitle), 'calculadora') => 'ph-calculator',
+            str_contains(strtolower($cleanTitle), 'conversor') => 'ph-currency-circle-dollar',
+            str_contains(strtolower($cleanTitle), 'gestor') => 'ph-chart-pie-slice',
+            str_contains(strtolower($cleanTitle), 'prestamos') => 'ph-bank',
+            str_contains(strtolower($cleanTitle), 'reloj') => 'ph-clock',
+            str_contains(strtolower($cleanTitle), 'texto') => 'ph-text-aa',
+            str_contains(strtolower($cleanTitle), 'email') => 'ph-envelope',
+            str_contains(strtolower($cleanTitle), 'cajero') => 'ph-atm',
+            str_contains(strtolower($cleanTitle), 'landing') => 'ph-browser',
+            str_contains(strtolower($cleanTitle), 'cotizacion') => 'ph-receipt',
+            str_contains(strtolower($cleanTitle), 'rsvp') => 'ph-envelope-simple',
+            str_contains(strtolower($cleanTitle), 'archivos') => 'ph-upload-simple',
+            str_contains(strtolower($cleanTitle), 'video') => 'ph-video-camera',
+            default => 'ph-cube'
+        };
+
+        $projects[] = new ProjectNode(
+            $folderName,
+            "DÍA " . str_pad($dayNum, 2, '0', STR_PAD_LEFT),
+            $cleanTitle,
+            $indexPath,
+            $icon
+        );
+    }
+}
+
+// Ordenar por día (numéricamente)
+usort($projects, fn($a, $b) => (int)filter_var($a->day, FILTER_SANITIZE_NUMBER_INT) <=> (int)filter_var($b->day, FILTER_SANITIZE_NUMBER_INT));
+
 ?>
 <!DOCTYPE html>
-<html lang="es" class="scroll-smooth">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>php8-masterclass-portfolio | Bychoke</title>
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>PHP 8.5 Masterclass | Global Hub</title>
     <link rel="icon" type="image/x-icon" href="https://www.php.net/favicon.ico">
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: { sans: ['Outfit', 'sans-serif'] },
-                    animation: {
-                        'gradient-x': 'gradient-x 15s ease infinite',
-                        'float': 'float 6s ease-in-out infinite',
-                    },
-                    keyframes: {
-                        'gradient-x': {
-                            '0%, 100%': {
-                                'background-size': '200% 200%',
-                                'background-position': 'left center'
-                            },
-                            '50%': {
-                                'background-size': '200% 200%',
-                                'background-position': 'right center'
-                            }
-                        },
-                        'float': {
-                            '0%, 100%': { transform: 'translateY(0)' },
-                            '50%': { transform: 'translateY(-10px)' },
-                        }
-                    }
-                }
-            }
-        }
-    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
     <style>
-        .glass-card {
-            background: rgba(15, 23, 42, 0.6);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border: 1px solid rgba(255, 255, 255, 0.05);
+        :root {
+            --php-blue: #4F5B93;
+            --php-blue-glow: rgba(79, 91, 147, 0.4);
+            --php-blue-light: #8892BF;
+            --bg-deep: #050608;
+            --panel-bg: rgba(13, 17, 23, 0.7);
+            --accent-emerald: #10b981;
+        }
+
+        body {
+            background-color: var(--bg-deep);
+            color: #94a3b8;
+            font-family: 'Outfit', sans-serif;
+            height: 100vh;
+            overflow: hidden;
+            background-image: 
+                radial-gradient(circle at 50% 50%, rgba(79, 91, 147, 0.05) 0%, transparent 80%);
+        }
+
+        .industrial-grid {
+            position: fixed;
+            inset: 0;
+            z-index: -1;
+            background-image: 
+                linear-gradient(rgba(136, 146, 191, 0.02) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(136, 146, 191, 0.02) 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+
+        .hub-container {
+            max-width: 1200px;
+            height: 100vh;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            padding: 1.5rem;
+        }
+
+        /* Compact Node Card */
+        .node-card {
+            background: var(--panel-bg);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(136, 146, 191, 0.1);
+            border-radius: 8px;
+            padding: 0.75rem;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .node-card:hover {
+            border-color: var(--php-blue);
+            background: rgba(79, 91, 147, 0.1);
+            transform: scale(1.02);
+            box-shadow: 0 0 20px var(--php-blue-glow);
+        }
+
+        .node-card.active::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 2px; height: 100%;
+            background: var(--php-blue);
+        }
+
+        .tech-label {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 6px;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--php-blue-light);
+            opacity: 0.6;
+        }
+
+        .node-icon {
+            width: 28px;
+            height: 28px;
+            background: rgba(0,0,0,0.4);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            border: 1px solid rgba(255,255,255,0.05);
             transition: all 0.3s ease;
         }
-        .glass-card:hover {
-            transform: translateY(-5px);
-            border-color: rgba(56, 189, 248, 0.5); /* cyan-400 */
-            box-shadow: 0 20px 40px -10px rgba(8, 145, 178, 0.3);
+
+        .node-card:hover .node-icon {
+            background: var(--php-blue);
+            color: white;
+            border-color: var(--php-blue-light);
+        }
+
+        /* Header Compact */
+        .portal-header {
+            display: flex;
+            justify-content: space-between;
+            items-center mb-6 border-b border-white/5 pb-4;
+        }
+
+        .text-header {
+            font-size: 1.5rem;
+            font-weight: 900;
+            letter-spacing: -0.05em;
+            color: white;
+            line-height: 1;
+        }
+
+        /* Scrollable Grid */
+        .nodes-view {
+            flex: 1;
+            overflow-y: auto;
+            padding-right: 0.5rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 0.75rem;
+            scrollbar-width: thin;
+            scrollbar-color: var(--php-blue) transparent;
+        }
+
+        .nodes-view::-webkit-scrollbar { width: 2px; }
+        .nodes-view::-webkit-scrollbar-thumb { background: var(--php-blue); }
+
+        .btn-launch {
+            font-size: 7px;
+            font-weight: 800;
+            text-transform: uppercase;
+            color: var(--php-blue-light);
+            display: flex;
+            align-items: center;
+            gap: 3px;
+            margin-top: auto;
+            opacity: 0.5;
+            transition: all 0.3s ease;
+        }
+
+        .node-card:hover .btn-launch {
+            opacity: 1;
+            color: white;
+        }
+
+        @keyframes pulse-dot {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.5); opacity: 0.5; }
+        }
+        .status-dot {
+            width: 3px; height: 3px;
+            background: var(--accent-emerald);
+            border-radius: 50%;
+            animation: pulse-dot 2s infinite;
         }
     </style>
 </head>
-<body class="bg-slate-950 text-slate-200 min-h-screen relative overflow-x-hidden selection:bg-cyan-500/30">
+<body>
+    <div class="industrial-grid"></div>
 
-    <!-- Background Effects -->
-    <div class="fixed inset-0 z-0 pointer-events-none">
-        <div class="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-blue-600/20 rounded-full blur-[120px] mix-blend-screen animate-float"></div>
-        <div class="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-indigo-600/20 rounded-full blur-[150px] mix-blend-screen animate-float" style="animation-delay: 2s;"></div>
-        <div class="absolute top-[40%] left-[60%] w-[30%] h-[30%] bg-cyan-600/10 rounded-full blur-[100px] mix-blend-screen animate-float" style="animation-delay: 4s;"></div>
-        
-        <!-- Grid Pattern Overlay -->
-        <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGcgc3Ryb2tlPSIjMWUzYTg3IiBzdHJva2Utd2lkdGg9IjAuNSIgZmlsbD0ibm9uZSI+PHBhdGggZD0iTTAgNjBoNjBWMHoiLz48L2c+PC9zdmc+')] opacity-[0.03]"></div>
-    </div>
-
-    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
-        
-        <!-- Header Section -->
-        <div class="text-center md:text-left mb-16 md:flex md:items-end justify-between border-b border-slate-800/60 pb-8">
-            <div class="max-w-3xl">
-                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 text-cyan-400 text-sm font-medium mb-6 border border-cyan-500/20">
-                    <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
-                    Nivel 1: Fundamentos y Lógica
+    <div class="hub-container">
+        <header class="flex justify-between items-end mb-8 border-b border-white/5 pb-4">
+            <div>
+                <div class="flex items-center gap-2 mb-1">
+                    <span class="status-dot"></span>
+                    <span class="tech-label">SYSTEM_CORE_MASTERCLASS // v8.5</span>
                 </div>
-                <h1 class="text-5xl md:text-5xl lg:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 to-indigo-600 tracking-tight mb-4 animate-gradient-x break-words">
-                    php8-masterclass-portfolio
-                </h1>
-                <p class="text-lg md:text-xl text-slate-400 font-light leading-relaxed">
-                    Colección de 10 proyectos interactivos desarrollados para consolidar los fundamentos de programación, POO y lógica usando las últimas características de PHP en entorno Linux (Fedora).
-                </p>
+                <h1 class="text-header uppercase">Terminal_<span style="color: var(--php-blue-light)">Hub</span></h1>
             </div>
-            <div class="mt-8 md:mt-0 flex flex-col items-center md:items-end gap-2">
-                <div class="text-sm text-slate-500 font-medium">Desarrollador</div>
-                <div class="flex items-center gap-3 bg-slate-900/50 px-4 py-2 rounded-xl border border-slate-800">
-                    <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-cyan-500 to-blue-600 flex items-center justify-center text-white font-bold shadow-lg">
-                        B
-                    </div>
-                    <div class="text-left">
-                        <div class="text-slate-200 font-semibold leading-tight">Bychoke</div>
-                        <div class="text-xs text-cyan-500">Sr. Software Engineer</div>
-                    </div>
-                </div>
+            <div class="text-right">
+                <span class="tech-label">LOADED_PROJECTS</span><br>
+                <span class="text-xl font-black font-mono text-white"><?= str_pad((string)count($projects), 2, '0', STR_PAD_LEFT) ?></span>
             </div>
-        </div>
+        </header>
 
-        <!-- Projects Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-            
-            <?php foreach ($proyectos as $proyecto): ?>
-            <!-- Project Card -->
-            <a href="/<?= $proyecto['folder'] ?>/public/" class="glass-card rounded-2xl p-6 group block relative overflow-hidden focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:ring-offset-2 focus:ring-offset-slate-950">
-                <!-- Hover gradient effect inside card -->
-                <div class="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                
-                <div class="relative z-10">
-                    <div class="flex justify-between items-start mb-4">
-                        <div class="w-12 h-12 rounded-xl bg-slate-900 border border-slate-700/50 flex items-center justify-center text-2xl shadow-inner group-hover:scale-110 transition-transform duration-300 group-hover:border-cyan-500/30">
-                            <?= $proyecto['icon'] ?>
+        <main class="nodes-view">
+            <?php foreach ($projects as $project): ?>
+                <a href="<?= $project->path ?>" class="node-card active group">
+                    <div class="flex justify-between items-start">
+                        <div class="node-icon">
+                            <i class="ph <?= $project->icon ?>"></i>
                         </div>
-                        <span class="text-4xl font-black text-slate-800/80 group-hover:text-slate-700 transition-colors select-none">
-                            <?= $proyecto['id'] ?>
-                        </span>
+                        <span class="tech-label opacity-40"><?= $project->day ?></span>
                     </div>
                     
-                    <h3 class="text-xl font-bold text-slate-100 mb-2 group-hover:text-cyan-400 transition-colors">
-                        <?= $proyecto['title'] ?>
-                    </h3>
-                    
-                    <p class="text-sm text-slate-400 leading-relaxed mb-6 group-hover:text-slate-300 transition-colors line-clamp-2">
-                        <?= htmlspecialchars($proyecto['description']) ?>
-                    </p>
-                    
-                    <div class="flex items-center text-sm font-semibold text-cyan-500 group-hover:text-cyan-400 group-hover:translate-x-1 transition-all">
-                        <span>Lanzar Proyecto</span>
-                        <svg class="w-4 h-4 ml-1.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                        </svg>
+                    <div>
+                        <h2 class="text-[10px] font-bold text-white leading-tight mb-0.5"><?= $project->title ?></h2>
+                        <span class="text-[6px] font-mono text-slate-500 uppercase tracking-widest">Status: <?= $project->status ?></span>
                     </div>
-                </div>
-            </a>
+
+                    <div class="btn-launch">
+                        ACCESS_NODE <i class="ph ph-arrow-right"></i>
+                    </div>
+                </a>
             <?php endforeach; ?>
+        </main>
 
-        </div>
-
-        <!-- Footer -->
-        <footer class="mt-20 pt-8 border-t border-slate-800/60 text-center">
-            <p class="text-slate-500 text-sm flex items-center justify-center gap-2">
-                <span>Construido con</span>
-                <svg class="w-4 h-4 text-rose-500 animate-pulse" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
-                </svg>
-                <span>& PHP 8.5.3 en Linux.</span>
-            </p>
-            <p class="mt-2 text-xs text-slate-600">Sistema local optimizado para alto rendimiento y UI moderna.</p>
+        <footer class="mt-6 flex justify-between items-center border-t border-white/5 pt-4 opacity-40">
+            <span class="tech-label">BY_CHOKE_RESOURCES // PORTFOLIO_LOCKDOWN</span>
+            <div class="flex gap-4">
+                <span class="tech-label">SYST_0x15</span>
+                <span class="tech-label">SYNC_OK</span>
+            </div>
         </footer>
-
     </div>
-
 </body>
 </html>

@@ -51,6 +51,42 @@
 **UI:** Grid 2 Columnas, Análisis en Tiempo Real  
 🚀 Puerto: `8084`
 
+#### [Día 08 - Adivina el Número](./dia-8-adivina-numero)
+**Concepto:** Estado del juego e inmersión visual  
+**Tecnologías:** PRG Pattern, `random_int()`, Cálculos de Rangos  
+**UI:** Cyberpunk/Arcade Theme, Barra Dinámica Neón  
+🚀 Puerto: `8085`
+
+#### [Día 09 - Validador de Email](./dia-9-validador-email)
+**Concepto:** Validación técnica y DNS  
+**Tecnologías:** `filter_var()`, `checkdnsrr()`  
+**UI:** Hacker/Terminal Theme, JetBrains Mono  
+🚀 Puerto: `8086`
+
+#### [Día 10 - Simulador de Cajero ATM](./dia-10-simulador-cajero)
+**Concepto:** Lógica financiera y excepciones  
+**Tecnologías:** POO estricta, `try-catch`, Sesiones  
+**UI:** Dark Glassmorphism, Alertas Inmediatas  
+**Port:** `8010`
+
+#### [Día 11 - Landing Page de Agencia](./dia-11-landing-page)
+**Concepto:** Renderizado dinámico y UI Premium  
+**Tecnologías:** PHP 8.2+ `readonly` classes, Constructor Promotion, DTOs  
+**UI:** Cyber Agency Theme, Glassmorphism, Tailwind CSS  
+**Port:** `8011`
+
+#### [Día 12 - Cotizador Industrial](./dia-12-formulario-cotizacion)
+**Concepto:** Cálculos dinámicos y validación estricta  
+**Tecnologías:** PHP 8.5 `readonly class`, Enums, `match` expressions  
+**UI:** Metal Dark Theme, Live Totals (JS), Glassmorphism  
+**Port:** `8012`
+
+#### [Día 13 - Recepción de RSVP](./dia-13-recepcion-rsvp)
+**Concepto:** Validación de datos y persistencia JSON  
+**Tecnologías:** PHP 8.5 `readonly class`, Namespaces, JSON storage  
+**UI:** Event Industrial Theme, Glassmorphism, Tailwind CSS  
+**Port:** `8013`
+
 ---
 
 ## 🛠️ Tecnologías Utilizadas
@@ -122,13 +158,10 @@ Luego visita: `http://localhost:8084`
 
 Ver [ROADMAP.md](./ROADMAP.md) para la lista completa de proyectos planificados.
 
-**Próximos proyectos:**
-- 08: Generador de Contraseñas
-- 09: Calculadora Científica
-- 10: Piedra, Papel o Tijera
-- 11: Landing Page con Formulario
-- 12: Sistema de Login
-- 13: CRUD de Tareas
+**Próximos proyectos (Fase 2):**
+- 11: Landing Page de Agencia
+- 12: Formulario de Cotización Dinámico
+- 13: Recepción de RSVP
 
 ---
 

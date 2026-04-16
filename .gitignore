@@ -1,0 +1,7 @@
+# Logs and temporary files
+*.txt
+*.log
+.DS_Store
+node_modules/
+vendor/
+.gemini/
