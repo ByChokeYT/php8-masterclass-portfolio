@@ -52,29 +52,52 @@ El curso se divide en 5 hitos fundamentales, cada uno con una dificultad y temá
 
 ---
 
-## 🚀 Cómo empezar
+---
+
+## 🚀 Cómo empezar (Universal)
+
+Esta academia es compatible con todos los sistemas operativos. Sigue estos pasos según tu entorno:
+
+### 1. Prerrequisitos
+Asegúrate de tener **PHP 8.2 o superior** instalado. Puedes verificarlo con `php -v`.
+
+| Sistema | Instrucción de Instalación Recomendada |
+| :--- | :--- |
+| **Windows** | Descarga [Laragon](https://laragon.org/) o [PHP for Windows](https://windows.php.net/download/). |
+| **macOS** | Usa Homebrew: `brew install php` |
+| **Linux** | Usa tu gestor de paquetes: `sudo apt install php` (Ubuntu/Debian) |
+
+### 2. Clonar y Ejecutar
+Independientemente de tu sistema, usa la terminal (CMD, PowerShell, iTerm o Bash):
 
 1. **Clona el repositorio:**
    ```bash
    git clone https://github.com/ByChokeYT/php8-masterclass-portfolio.git
    ```
-2. **Corre un servidor local:**
+2. **Entra al directorio:**
    ```bash
    cd php8-masterclass-portfolio
+   ```
+3. **Inicia el servidor educativo nativo:**
+   ```bash
    php -S localhost:8000
    ```
-3. **Accede al Academy Hub:**
-   Abre [http://localhost:8000](http://localhost:8000) para ver el monitor de progreso y navegar por todos los retos.
+
+### 3. Accede al Nexus
+Abre tu navegador habitual y entra en:
+👉 [**http://localhost:8000**](http://localhost:8000)
+
+Ahí encontrarás el **Academic Hub** con tu progreso visual y todos los proyectos listos para ser explorados.
 
 ---
 
-## 🛠️ Tecnologías Utilizadas
+## 🛠️ Tecnologías Masterclass
 - **PHP 8.5** (Match, Readonly Properties, Typed Parameters)
-- **Tailwind CSS v3.4** (Diseño Industrial)
-- **Vanilla JavaScript** (AJAX, Fetch API, DOM Manipulation)
-- **Phosphor Icons** (Estética Técnica)
+- **Tailwind CSS v3.4** (Diseño Industrial & Proyecciones)
+- **Vanilla JavaScript** (Interactividad AJAX y Fetch)
+- **Phosphor Icons** (Simbología Técnica)
 
 ---
 
 **Propiedad de By Choke // Academia Masterclass 2024**
-*"Construyendo el futuro del desarrollo PHP línea a línea."*
+*"Construyendo el futuro del desarrollo PHP línea a línea, en cualquier plataforma."*
