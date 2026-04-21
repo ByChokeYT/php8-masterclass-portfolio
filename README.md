@@ -1,197 +1,80 @@
-# 🐘 php8-masterclass-portfolio
+# 🐘 50_PROYECTOS_PHP // MASTERCLASS
 
-> **Colección de proyectos educativos usando las últimas características de PHP**
-> Desde calculadoras hasta aplicaciones web completas, todos con diseño premium y código moderno.
+![Masterclass Banner](https://img.shields.io/badge/PHP-8.5-4F5B93?style=for-the-badge&logo=php&logoColor=white)
+![Status](https://img.shields.io/badge/Progress-20%20%2F%2050-emerald?style=for-the-badge)
+![UI](https://img.shields.io/badge/UI-Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css)
+
+> **"Un viaje del Bit a la Arquitectura."** 🚀
+> 
+> Repositorio oficial de la Masterclass PHP 8.5 por **By Choke**. Una plataforma académica diseñada para transformar a entusiastas en desarrolladores PHP profesionales a través de 50 retos prácticos e industriales.
 
 ---
 
-## 📚 Proyectos Completados
+## 🏗️ Estructura del Aprendizaje (Fases)
 
-### Nivel 1: Fundamentos
+El curso se divide en 5 hitos fundamentales, cada uno con una dificultad y temática específica:
 
-#### [Día 01 - Calculadora de Minerales](./dia-1-calculadora-minerales)
-**Concepto:** Introducción a PHP básico  
-**Tecnologías:** Enums, Clases, Sesiones, PRG Pattern  
-**UI:** Glassmorphism, Gradientes, Fintech Theme  
-🚀 Puerto: `8000`
+| Fase | Título | Temática | Dificultad | Color |
+| :--- | :--- | :--- | :--- | :--- |
+| **01** | Fundamentos y Sintaxis | Lógica CLI, tipos, arrays y control. | 🟢 Inicial | Emerald |
+| **02** | UI/UX y Formularios | Tailwind CSS, $_POST/$_GET y Frontend. | 🔵 Intermedio | Cyan |
+| **03** | Persistencia y SQL | MySQL, PDO y Gestión de Datos. | 🟡 Desafío | Amber |
+| **04** | Arquitectura Moderna | APIs REST, POO avanzada y Patrones. | 🔴 Avanzado | Rose |
+| **05** | Ecosistema Real-World | Security, Deploy y Aplicaciones Pro. | 🟣 Experto | Violet |
 
-#### [Día 02 - Conversor de Divisas](./dia-2-conversor-divisas)
-**Concepto:** Enums y servicios  
-**Tecnologías:** Currency Enum, ConverterService, Historial  
-**UI:** Trading Card Layout, Monospace Typography  
-🚀 Puerto: `8000`
+---
 
-#### [Día 03 - Gestor de Gastos](./dia-3-gestor-gastos)
-**Concepto:** DTOs y gestión de sesiones  
-**Tecnologías:** Transaction DTO, BudgetManager, Session Persistence  
-**UI:** Dashboard Financiero, Sidebar Layout  
-🚀 Puerto: `8080`
+## 📂 Índice de Proyectos (Fase 1 y 2 Completadas)
 
-#### [Día 04 - Simulador de Préstamos](./dia-4-simulador-prestamos)
-**Concepto:** Cálculos matemáticos complejos  
-**Tecnologías:** Amortización Francesa, Sliders Interactivos  
-**UI:** Bank Fintech Theme, Tabla de Amortización  
-🚀 Puerto: `8081`
+### 🟢 Fase 1: Dominio de la Terminal
+- **Día 01:** [Calculadora Minerales](dia-01-calculadora-minerales/) - Evaluación de pureza en CLI.
+- **Día 02:** [Conversor Divisas](dia-02-conversor-divisas/) - Manejo de tipos de cambio.
+- **Día 03:** [Gestor Gastos](dia-03-gestor-gastos/) - Filtrado de logs de sistema.
+- **Día 04:** [Simulador Prestamos](dia-04-simulador-prestamos/) - Lógica matemática aplicada.
+- **Día 05:** [Calculadora Ime](dia-05-calculadora-imc/) - Formateo de datos JSON/CSV.
+- **Día 06:** [Reloj Tiempo Real](dia-06-reloj-tiempo-real/) - Generación de tokens seguros.
+- **Día 07:** [Analizador Texto](dia-07-analizador-texto/) - Manipulación de strings avanzada.
+- **Día 08:** [Adivina Numero](dia-08-adivina-numero/) - Estructuras de decisión y bucles.
+- **Día 09:** [Validador Email](dia-09-validador-email/) - Regex y limpieza de datos.
+- **Día 10:** [Simulador Cajero](dia-10-simulador-cajero/) - Simulación de estados complejos.
 
-#### [Día 05 - Calculadora de IMC](./dia-5-calculadora-imc)
-**Concepto:** Tipos de datos y validación estricta  
-**Tecnologías:** `match` expressions, Constructor Promotion, `readonly`  
-**UI:** HealthTech Theme, Escala Visual de Colores  
-🚀 Puerto: `8082`
+### 🔵 Fase 2: UI/UX Industrial
+- **Día 11:** [Landing Page](dia-11-landing-page/) - Primeros pasos con Tailwind y PHP.
+- **Día 12:** [Formulario Cotizacion](dia-12-formulario-cotizacion/) - Datos dinámicos en tiempo real.
+- **Día 13:** [Recepcion RSVP](dia-13-recepcion-rsvp/) - Confirmaciones y validación POST.
+- **Día 14:** [Subida Archivos](dia-14-subida-archivos/) - Manejo seguro de archivos.
+- **Día 15:** [Video Previewer](dia-15-video-previewer/) - Galería dinámica por ID.
+- **Día 16:** [Login en Memoria](dia-16-login-en-memoria/) - Manejo de sesiones y seguridad.
+- **Día 17:** [Calculadora Liquidacion](dia-17-calculadora-liquidacion/) - Dashboard web profesional.
+- **Día 18:** [Markdown To Html](dia-18-markdown-to-html/) - Renderizado de contenido técnico.
+- **Día 19:** [Generador Tarjetas](dia-19-generador-tarjetas/) - Identidad profesional modular.
+- **Día 20:** [Encuesta Visual](dia-20-encuesta-visual/) - Persistencia manual .txt y AJAX.
 
-#### [Día 06 - Reloj en Tiempo Real](./dia-6-reloj-tiempo-real)
-**Concepto:** Bucles y actualización continua  
-**Tecnologías:** `while(true)`, ANSI codes, JavaScript `setInterval()`  
-**UI:** Reloj Digital + Clima de Oruro (API Open-Meteo)  
-🚀 Puerto: `8083` | CLI: `php reloj.php`
+---
 
-#### [Día 07 - Analizador de Texto](./dia-7-analizador-texto)
-**Concepto:** Procesamiento de strings y regex  
-**Tecnologías:** `str_word_count()`, `mb_strlen()`, `preg_match_all()`  
-**UI:** Grid 2 Columnas, Análisis en Tiempo Real  
-🚀 Puerto: `8084`
+## 🚀 Cómo empezar
 
-#### [Día 08 - Adivina el Número](./dia-8-adivina-numero)
-**Concepto:** Estado del juego e inmersión visual  
-**Tecnologías:** PRG Pattern, `random_int()`, Cálculos de Rangos  
-**UI:** Cyberpunk/Arcade Theme, Barra Dinámica Neón  
-🚀 Puerto: `8085`
-
-#### [Día 09 - Validador de Email](./dia-9-validador-email)
-**Concepto:** Validación técnica y DNS  
-**Tecnologías:** `filter_var()`, `checkdnsrr()`  
-**UI:** Hacker/Terminal Theme, JetBrains Mono  
-🚀 Puerto: `8086`
-
-#### [Día 10 - Simulador de Cajero ATM](./dia-10-simulador-cajero)
-**Concepto:** Lógica financiera y excepciones  
-**Tecnologías:** POO estricta, `try-catch`, Sesiones  
-**UI:** Dark Glassmorphism, Alertas Inmediatas  
-**Port:** `8010`
-
-#### [Día 11 - Landing Page de Agencia](./dia-11-landing-page)
-**Concepto:** Renderizado dinámico y UI Premium  
-**Tecnologías:** PHP 8.2+ `readonly` classes, Constructor Promotion, DTOs  
-**UI:** Cyber Agency Theme, Glassmorphism, Tailwind CSS  
-**Port:** `8011`
-
-#### [Día 12 - Cotizador Industrial](./dia-12-formulario-cotizacion)
-**Concepto:** Cálculos dinámicos y validación estricta  
-**Tecnologías:** PHP 8.5 `readonly class`, Enums, `match` expressions  
-**UI:** Metal Dark Theme, Live Totals (JS), Glassmorphism  
-**Port:** `8012`
-
-#### [Día 13 - Recepción de RSVP](./dia-13-recepcion-rsvp)
-**Concepto:** Validación de datos y persistencia JSON  
-**Tecnologías:** PHP 8.5 `readonly class`, Namespaces, JSON storage  
-**UI:** Event Industrial Theme, Glassmorphism, Tailwind CSS  
-**Port:** `8013`
+1. **Clona el repositorio:**
+   ```bash
+   git clone https://github.com/ByChokeYT/php8-masterclass-portfolio.git
+   ```
+2. **Corre un servidor local:**
+   ```bash
+   cd php8-masterclass-portfolio
+   php -S localhost:8000
+   ```
+3. **Accede al Academy Hub:**
+   Abre [http://localhost:8000](http://localhost:8000) para ver el monitor de progreso y navegar por todos los retos.
 
 ---
 
 ## 🛠️ Tecnologías Utilizadas
-
-### PHP 8.5 Features
-- ✅ `declare(strict_types=1)`
-- ✅ Constructor Property Promotion
-- ✅ `readonly` properties
-- ✅ `match` expressions
-- ✅ Enums
-- ✅ Union Types
-- ✅ Typed Properties & Return Types
-
-### Frontend
-- HTML5 Semántico
-- CSS Grid & Flexbox
-- Custom Properties (CSS Variables)
-- Glassmorphism & Gradientes
-- Animaciones CSS
-- JavaScript Vanilla
-
-### Patrones de Diseño
-- Post/Redirect/Get (PRG)
-- Data Transfer Objects (DTOs)
-- Service Layer Pattern
-- Session Management
-- Real-time Updates
-
-### Recursos Externos
-- [Phosphor Icons](https://phosphoricons.com/) - Iconografía
-- [Google Fonts](https://fonts.google.com/) - Tipografías (Outfit, Orbitron)
-- [Open-Meteo API](https://open-meteo.com/) - Datos del clima
-- PHP Official Favicon
+- **PHP 8.5** (Match, Readonly Properties, Typed Parameters)
+- **Tailwind CSS v3.4** (Diseño Industrial)
+- **Vanilla JavaScript** (AJAX, Fetch API, DOM Manipulation)
+- **Phosphor Icons** (Estética Técnica)
 
 ---
 
-## 🎨 Filosofía de Diseño
-
-Todos los proyectos siguen estos principios:
-
-1. **Paleta PHP Oficial:** ElePHPant Blue (#4F5B93, #8892BF)
-2. **Single-Page Layout:** Todo visible sin scroll (100vh)
-3. **Premium Look:** Glassmorphism, gradientes, sombras
-4. **Responsive:** Adaptable a móviles
-5. **Animaciones Suaves:** Hover effects, transiciones
-
----
-
-## 🚀 Inicio Rápido
-
-### Requisitos
-- PHP 8.5+
-- Navegador moderno
-- Terminal
-
-### Ejecutar un proyecto
-
-```bash
-# Ejemplo: Proyecto 07
-cd dia-7-analizador-texto
-php -S localhost:8084 -t public
-```
-
-Luego visita: `http://localhost:8084`
-
----
-
-## 📖 Roadmap
-
-Ver [ROADMAP.md](./ROADMAP.md) para la lista completa de proyectos planificados.
-
-**Próximos proyectos (Fase 2):**
-- 11: Landing Page de Agencia
-- 12: Formulario de Cotización Dinámico
-- 13: Recepción de RSVP
-
----
-
-## 📝 Estructura de Cada Proyecto
-
-```
-XX_nombre_proyecto/
-├── public/
-│   ├── index.php       # Punto de entrada
-│   └── css/
-│       └── style.css   # Estilos (si aplica)
-├── src/
-│   ├── Classes/        # DTOs y modelos
-│   └── Services/       # Lógica de negocio
-└── README.md           # Documentación específica
-```
-
----
-
-## 🤝 Contribuciones
-
-Este es un proyecto educativo personal. Si encuentras mejoras o bugs, siéntete libre de sugerir cambios.
-
----
-
-## 📄 Licencia
-
-MIT License - Libre para uso educativo y personal.
-
----
-
-**Desarrollado con 💙 usando PHP 8.5**  
-*php8-masterclass-portfolio • 2026*
+**Propiedad de By Choke // Academia Masterclass 2024**
+*"Construyendo el futuro del desarrollo PHP línea a línea."*
