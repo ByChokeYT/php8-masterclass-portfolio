@@ -71,6 +71,13 @@ $categories = ['Tecnología','Alimentación','Transporte','Educación','Salud','
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
 </head>
 <body>
+<?php
+$dayLabel = 'DÍA 29';
+$dayTitle = 'Registro de Gastos Diarios';
+$prevUrl  = 'http://localhost:8028';
+$nextUrl  = 'http://localhost:8030';
+require_once __DIR__ . '/../../_nav.php';
+?>
 
 <!-- ── NAV ── -->
 <nav class="topnav">

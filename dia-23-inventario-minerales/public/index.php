@@ -59,6 +59,13 @@ $logs = $manager->getLogs(15);
     <link rel="stylesheet" href="assets/css/style.css?v=<?= time() ?>">
 </head>
 <body>
+<?php
+$dayLabel = 'DÍA 23';
+$dayTitle = 'Inventario de Minerales';
+$prevUrl  = 'http://localhost:8022';
+$nextUrl  = 'http://localhost:8024';
+require_once __DIR__ . '/../../_nav.php';
+?>
     <div class="industrial-grid"></div>
 
     <div class="container">

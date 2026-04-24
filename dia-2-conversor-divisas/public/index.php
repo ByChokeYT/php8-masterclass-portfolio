@@ -89,6 +89,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !isset($_POST['action'])) {
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
 </head>
 <body>
+<?php
+$dayLabel = 'DÍA 02';
+$dayTitle = 'Conversor de Divisas';
+$prevUrl  = '';
+$nextUrl  = '';
+require_once __DIR__ . '/../../_nav.php';
+?>
 
     <div class="container glass-effect">
         

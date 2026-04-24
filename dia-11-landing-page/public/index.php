@@ -277,6 +277,13 @@ $testimonials = [
     </style>
 </head>
 <body class="font-sans antialiased text-slate-300 min-h-screen flex flex-col overflow-x-hidden selection:bg-steelBlue selection:text-slate-900">
+<?php
+$dayLabel = 'DÍA 11';
+$dayTitle = 'Landing Page Dinámica';
+$prevUrl  = '';
+$nextUrl  = '';
+require_once __DIR__ . '/../../_nav.php';
+?>
 
     <!-- Línea superior de acero frío decorativa -->
     <div class="h-1 w-full bg-gradient-to-r from-cyan-400 via-sky-500 to-blue-600"></div>

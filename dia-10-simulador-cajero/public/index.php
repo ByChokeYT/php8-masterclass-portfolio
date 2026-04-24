@@ -116,6 +116,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </style>
 </head>
 <body class="bg-[#020617] text-slate-200 min-h-screen flex items-center justify-center p-4 relative overflow-hidden selection:bg-cyan-500/30">
+<?php
+$dayLabel = 'DÍA 10';
+$dayTitle = 'Simulador de Cajero ATM';
+$prevUrl  = '';
+$nextUrl  = '';
+require_once __DIR__ . '/../../_nav.php';
+?>
 
     <!-- Ambient glow -->
     <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] bg-cyan-600/20 rounded-full blur-[80px] pointer-events-none"></div>

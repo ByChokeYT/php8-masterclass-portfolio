@@ -242,6 +242,13 @@ $totalGuests = array_reduce($data, fn($carry, $item) => $carry + $item['guests']
     </style>
 </head>
 <body class="min-h-screen relative selection:bg-sky-500/30">
+<?php
+$dayLabel = 'DÍA 13';
+$dayTitle = 'Recepción RSVP';
+$prevUrl  = '';
+$nextUrl  = '';
+require_once __DIR__ . '/../../_nav.php';
+?>
     <div class="industrial-bg">
         <div class="grid-pattern"></div>
         <span class="coordinate-marker" style="top: 1.5rem; left: 1.5rem;">[NODE: 17.96.67.10]</span>

@@ -36,6 +36,13 @@ try {
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
 </head>
 <body>
+<?php
+$dayLabel = 'DÍA 27';
+$dayTitle = 'Catálogo de Servicios Titanium';
+$prevUrl  = 'http://localhost:8026';
+$nextUrl  = 'http://localhost:8028';
+require_once __DIR__ . '/../../_nav.php';
+?>
     <div class="background-layer"></div>
     <div class="grid-overlay"></div>
 

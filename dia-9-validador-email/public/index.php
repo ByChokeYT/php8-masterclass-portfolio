@@ -174,6 +174,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </style>
 </head>
 <body>
+<?php
+$dayLabel = 'DÍA 09';
+$dayTitle = 'Validador de Email';
+$prevUrl  = '';
+$nextUrl  = '';
+require_once __DIR__ . '/../../_nav.php';
+?>
 
     <div class="terminal-window">
         <div class="terminal-header">

@@ -279,6 +279,13 @@ $current_range_left = (($min - 1) / $total_range) * 100;
     </style>
 </head>
 <body>
+<?php
+$dayLabel = 'DÍA 08';
+$dayTitle = 'Adivina el Número';
+$prevUrl  = '';
+$nextUrl  = '';
+require_once __DIR__ . '/../../_nav.php';
+?>
 
     <div class="corner tl"></div>
     <div class="corner br"></div>

@@ -48,6 +48,13 @@ $dbConfig = $dbHost->getConfig();
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
+<?php
+$dayLabel = 'DÍA 21';
+$dayTitle = 'Conexión PDO Inmutable';
+$prevUrl  = 'http://localhost:8000';
+$nextUrl  = 'http://localhost:8022';
+require_once __DIR__ . '/../../_nav.php';
+?>
     <div class="industrial-grid"></div>
     <div class="glow-sphere"></div>
 

@@ -262,6 +262,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </style>
 </head>
 <body>
+<?php
+$dayLabel = 'DÍA 05';
+$dayTitle = 'Calculadora IMC';
+$prevUrl  = '';
+$nextUrl  = '';
+require_once __DIR__ . '/../../_nav.php';
+?>
 
 <div class="bmi-card">
     <div class="header-section">

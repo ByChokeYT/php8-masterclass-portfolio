@@ -266,6 +266,13 @@ $externalUrl = $isYouTube ? "https://www.youtube.com/watch?v=" . basename($curre
     </style>
 </head>
 <body class="flex items-center justify-center p-2">
+<?php
+$dayLabel = 'DÍA 15';
+$dayTitle = 'Video Previewer';
+$prevUrl  = '';
+$nextUrl  = '';
+require_once __DIR__ . '/../../_nav.php';
+?>
     <div class="industrial-bg">
         <div class="grid-pattern"></div>
         <div class="fine-grid"></div>

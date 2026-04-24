@@ -81,6 +81,13 @@ $currentUser = $_SESSION['user'] ?? null;
     <link rel="stylesheet" href="assets/css/style.css?v=<?= time() ?>">
 </head>
 <body>
+<?php
+$dayLabel = 'DÍA 24';
+$dayTitle = 'Registro Seguro Bcrypt';
+$prevUrl  = 'http://localhost:8023';
+$nextUrl  = 'http://localhost:8025';
+require_once __DIR__ . '/../../_nav.php';
+?>
     <div class="industrial-grid"></div>
 
     <div class="container">

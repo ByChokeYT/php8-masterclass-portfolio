@@ -55,6 +55,13 @@ $links = $manager->getLinks();
     <link rel="stylesheet" href="assets/css/style.css?v=<?= time() ?>">
 </head>
 <body>
+<?php
+$dayLabel = 'DÍA 25';
+$dayTitle = 'Gestor de Enlac QR';
+$prevUrl  = 'http://localhost:8024';
+$nextUrl  = 'http://localhost:8026';
+require_once __DIR__ . '/../../_nav.php';
+?>
     <div class="industrial-grid"></div>
 
     <div class="container">

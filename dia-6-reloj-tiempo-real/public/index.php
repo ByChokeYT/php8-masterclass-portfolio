@@ -184,6 +184,13 @@
     </style>
 </head>
 <body>
+<?php
+$dayLabel = 'DÍA 06';
+$dayTitle = 'Reloj en Tiempo Real';
+$prevUrl  = '';
+$nextUrl  = '';
+require_once __DIR__ . '/../../_nav.php';
+?>
 
 <div class="container">
     <div class="header">

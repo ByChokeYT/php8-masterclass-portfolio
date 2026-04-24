@@ -162,6 +162,13 @@
     </style>
 </head>
 <body>
+<?php
+$dayLabel = 'DÍA 07';
+$dayTitle = 'Analizador de Texto';
+$prevUrl  = '';
+$nextUrl  = '';
+require_once __DIR__ . '/../../_nav.php';
+?>
 
 <div class="container">
     <div class="header">

@@ -28,6 +28,13 @@ $stats = $service->getGlobalStats();
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
 </head>
 <body>
+<?php
+$dayLabel = 'DÍA 30';
+$dayTitle = 'Dashboard de Administración';
+$prevUrl  = 'http://localhost:8029';
+$nextUrl  = 'http://localhost:8031';
+require_once __DIR__ . '/../../_nav.php';
+?>
     <div class="grid-bg"></div>
 
     <div class="container">

@@ -87,6 +87,13 @@ $guests = $manager->getAll();
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
+<?php
+$dayLabel = 'DÍA 22';
+$dayTitle = 'CRUD de Invitados';
+$prevUrl  = 'http://localhost:8021';
+$nextUrl  = 'http://localhost:8023';
+require_once __DIR__ . '/../../_nav.php';
+?>
     <div class="industrial-grid"></div>
 
     <div class="container">

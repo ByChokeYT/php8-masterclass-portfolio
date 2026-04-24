@@ -61,6 +61,13 @@ foreach ($transactions as $t) {
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
 </head>
 <body>
+<?php
+$dayLabel = 'DÍA 03';
+$dayTitle = 'Gestor de Gastos CLI';
+$prevUrl  = '';
+$nextUrl  = '';
+require_once __DIR__ . '/../../_nav.php';
+?>
 
 <div class="dashboard-container">
     

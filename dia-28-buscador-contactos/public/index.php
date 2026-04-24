@@ -41,6 +41,13 @@ $total = count($contacts ?? []);
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
 </head>
 <body>
+<?php
+$dayLabel = 'DÍA 28';
+$dayTitle = 'Buscador de Contactos';
+$prevUrl  = 'http://localhost:8027';
+$nextUrl  = 'http://localhost:8029';
+require_once __DIR__ . '/../../_nav.php';
+?>
 
     <!-- ── Topbar ── -->
     <nav class="topbar">

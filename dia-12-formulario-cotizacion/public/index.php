@@ -89,6 +89,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </style>
 </head>
 <body class="min-h-screen flex items-center justify-center p-6">
+<?php
+$dayLabel = 'DÍA 12';
+$dayTitle = 'Formulario de Cotización';
+$prevUrl  = '';
+$nextUrl  = '';
+require_once __DIR__ . '/../../_nav.php';
+?>
     <div class="max-w-4xl w-full grid md:grid-cols-2 gap-8">
         
         <!-- Info del Taller -->

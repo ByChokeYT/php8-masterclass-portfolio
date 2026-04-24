@@ -160,6 +160,13 @@ $formattedTotalSize = round($totalSize / 1048576, 2) . ' MB';
     </style>
 </head>
 <body class="flex items-center justify-center">
+<?php
+$dayLabel = 'DÍA 14';
+$dayTitle = 'Subida de Archivos';
+$prevUrl  = '';
+$nextUrl  = '';
+require_once __DIR__ . '/../../_nav.php';
+?>
     <div class="industrial-bg">
         <div class="grid-pattern"></div>
     </div>
