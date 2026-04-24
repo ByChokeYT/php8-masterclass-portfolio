@@ -1,7 +1,5 @@
-# Logs and temporary files
-*.txt
-*.log
-.DS_Store
-node_modules/
+*.sqlite
+*.sqlite-journal
 vendor/
-.gemini/
+.DS_Store
+*.log

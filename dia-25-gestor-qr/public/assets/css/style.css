@@ -1,0 +1,196 @@
+:root {
+    --bg-deep: #05070a;
+    --panel-bg: rgba(13, 17, 23, 0.7);
+    --accent: #4f5b93;
+    --accent-glow: rgba(79, 91, 147, 0.4);
+    --success: #10b981;
+    --error: #ef4444;
+    --warning: #f59e0b;
+    --text-primary: #f8fafc;
+    --text-secondary: #94a3b8;
+    --glass-border: rgba(255, 255, 255, 0.05);
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+    background-color: var(--bg-deep);
+    color: var(--text-primary);
+    font-family: 'Outfit', sans-serif;
+    min-height: 100vh;
+}
+
+.industrial-grid {
+    position: fixed; inset: 0; z-index: -1;
+    background-image: 
+        linear-gradient(rgba(255, 255, 255, 0.012) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.012) 1px, transparent 1px);
+    background-size: 40px 40px;
+}
+
+.container { width: 100%; max-width: 1200px; margin: 4rem auto; padding: 0 1.5rem; }
+
+header.header {
+    margin-bottom: 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.tech-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--accent);
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+h1 { font-size: 2.5rem; font-weight: 900; letter-spacing: -0.02em; }
+
+/* Panel Superior Formulario */
+.panel {
+    background: var(--panel-bg);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    padding: 2.5rem;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    margin-bottom: 2.5rem;
+}
+
+.panel-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+}
+.panel-header i { color: var(--accent); font-size: 1.5rem; }
+.panel-header h2 { font-size: 1rem; font-weight: 800; letter-spacing: 0.1em; color: var(--text-secondary); text-transform: uppercase; font-family: 'JetBrains Mono'; }
+
+.qr-form {
+    display: grid;
+    grid-template-columns: 1fr 2fr auto;
+    gap: 1.5rem;
+    align-items: end;
+}
+
+.form-group label { display: block; font-family: 'JetBrains Mono'; font-size: 0.65rem; color: var(--text-secondary); margin-bottom: 0.5rem; text-transform: uppercase; }
+
+input {
+    width: 100%;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid var(--glass-border);
+    border-radius: 12px;
+    padding: 0.85rem 1rem;
+    color: white;
+    font-family: inherit;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+}
+
+input:focus { border-color: var(--accent); outline: none; background: rgba(255,255,255,0.05); }
+
+.btn-submit {
+    height: 48px;
+    padding: 0 2rem;
+    border-radius: 12px;
+    border: none;
+    background: var(--accent);
+    color: white;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+    transition: transform 0.2s, background 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.btn-submit:hover { transform: translateY(-2px); background: #5f6db3; }
+
+/* Grid de Códigos QR */
+.qr-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.qr-card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.qr-card:hover {
+    background: rgba(255, 255, 255, 0.04);
+    border-color: var(--accent-glow);
+    transform: translateY(-5px);
+}
+
+.qr-image-wrapper {
+    background: white;
+    padding: 1rem;
+    border-radius: 12px;
+    margin-bottom: 1.25rem;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.qr-image-wrapper img {
+    display: block;
+    width: 150px;
+    height: 150px;
+}
+
+.qr-title {
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+}
+
+.qr-url {
+    font-size: 0.75rem;
+    color: var(--accent);
+    font-family: 'JetBrains Mono';
+    word-break: break-all;
+    margin-bottom: 1rem;
+    text-decoration: none;
+}
+.qr-url:hover { text-decoration: underline; }
+
+.qr-meta {
+    font-family: 'JetBrains Mono';
+    font-size: 0.6rem;
+    color: var(--text-secondary);
+    letter-spacing: 0.1em;
+    padding-top: 1rem;
+    border-top: 1px solid var(--glass-border);
+    width: 100%;
+}
+
+.alert {
+    padding: 1rem;
+    border-radius: 12px;
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    font-size: 0.9rem;
+    gap: 0.75rem;
+}
+.alert-success { background: rgba(16, 185, 129, 0.1); color: var(--success); border: 1px solid var(--success); }
+.alert-error { background: rgba(239, 68, 68, 0.1); color: var(--error); border: 1px solid var(--error); }
+
+@media (max-width: 768px) {
+    .qr-form { grid-template-columns: 1fr; }
+    .btn-submit { width: 100%; justify-content: center; }
+}

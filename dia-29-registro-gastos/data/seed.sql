@@ -1,0 +1,15 @@
+INSERT INTO expenses (description, amount, category, expense_date) VALUES
+('Internet Fibra Óptica', 150.00, 'Tecnología', '2026-04-01'),
+('Supermercado Semanal', 320.50, 'Alimentación', '2026-04-02'),
+('Servidor VPS Cloud', 85.00, 'Tecnología', '2026-04-03'),
+('Gasolina del Vehículo', 200.00, 'Transporte', '2026-04-05'),
+('Curso de PHP Avanzado', 499.00, 'Educación', '2026-04-07'),
+('Restaurante Almuerzo', 95.00, 'Alimentación', '2026-04-08'),
+('Licencia Software', 220.00, 'Tecnología', '2026-04-10'),
+('Gym Mensual', 180.00, 'Salud', '2026-04-10'),
+('Pasajes en Bus', 45.00, 'Transporte', '2026-04-12'),
+('Material de Oficina', 130.00, 'Oficina', '2026-04-14'),
+('Consulta Médica', 250.00, 'Salud', '2026-04-15'),
+('Café & Snacks', 60.00, 'Alimentación', '2026-04-18'),
+('Dominio Web Anual', 75.00, 'Tecnología', '2026-04-20'),
+('Libro Técnico', 110.00, 'Educación', '2026-04-22');

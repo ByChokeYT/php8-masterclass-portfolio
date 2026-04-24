@@ -39,7 +39,18 @@ $projectMetadata = [
     17 => 'Calculadora de liquidaciones con diseño Tailwind y lógica de Fase 1.',
     18 => 'Motor de renderizado para convertir notas Markdown a HTML real.',
     19 => 'Generador modular de identidad profesional con carga de retrato.',
-    20 => 'Sistema de votos con persistencia manual en .txt y analíticas AJAX.'
+    20 => 'Sistema de votos con persistencia manual en .txt y analíticas AJAX.',
+    21 => 'Clase de conexión PDO inmutable con propiedades readonly para máxima seguridad.',
+    22 => 'Sistema CRUD completo para gestión de asistentes con base de datos SQLite.',
+    23 => 'Inventario transaccional de minerales con arquitectura de alta densidad.',
+    24 => 'Sistema de registro seguro con hashing de contraseñas Bcrypt.',
+    25 => 'Gestor de enlaces QR con persistencia y visualización matricial.',
+    26 => 'Muro de mensajes y deseos con seguridad XSS y diseño Glassmorphism.',
+    27 => 'Catálogo visual de servicios con extracción de datos y assets desde BD.',
+    28 => 'Buscador avanzado de contactos con filtros SQL LIKE y WHERE.',
+    29 => 'Sistema de registro de gastos con sumatorias por categoría y fechas.',
+    30 => 'Panel administrativo consolidado con métricas de múltiples bases de datos.',
+    31 => 'Generador de códigos QR integrando librerías externas mediante Composer.'
 ];
 
 // Definición de Fases Académicas con Paleta de Colores por Dificultad
@@ -127,6 +138,14 @@ foreach ($iterator as $fileInfo) {
             str_contains(strtolower($cleanTitle), 'markdown') => 'ph-code-block',
             str_contains(strtolower($cleanTitle), 'tarjetas') => 'ph-identification-card',
             str_contains(strtolower($cleanTitle), 'encuesta') => 'ph-chart-bar',
+            str_contains(strtolower($cleanTitle), 'conexion') => 'ph-database',
+            str_contains(strtolower($cleanTitle), 'invitados') => 'ph-users-three',
+            str_contains(strtolower($cleanTitle), 'qr') => 'ph-qr-code',
+            str_contains(strtolower($cleanTitle), 'muro') || str_contains(strtolower($cleanTitle), 'comentarios') => 'ph-chat-centered-text',
+            str_contains(strtolower($cleanTitle), 'catalogo') => 'ph-image',
+            str_contains(strtolower($cleanTitle), 'buscador') => 'ph-magnifying-glass',
+            str_contains(strtolower($cleanTitle), 'gastos') => 'ph-wallet',
+            str_contains(strtolower($cleanTitle), 'dashboard') || str_contains(strtolower($cleanTitle), 'admin') => 'ph-gauge',
             default => 'ph-cube'
         };
 
@@ -135,7 +154,7 @@ foreach ($iterator as $fileInfo) {
             $folderName,
             "DÍA " . str_pad((string)$dayNum, 2, '0', STR_PAD_LEFT),
             $cleanTitle,
-            $projectMetadata[$dayNum] ?? 'Descripción técnica oficial en proceso...',
+            $projectMetadata[$dayNum] ?? 'Gestión de persistencia y datos relacionales.',
             $indexPath,
             $icon
         );

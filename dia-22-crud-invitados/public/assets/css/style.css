@@ -1,0 +1,276 @@
+:root {
+    --bg-deep: #05070a;
+    --panel-bg: rgba(13, 17, 23, 0.7);
+    --accent: #4f5b93;
+    --accent-glow: rgba(79, 91, 147, 0.4);
+    --success: #10b981;
+    --error: #ef4444;
+    --warning: #f59e0b;
+    --text-primary: #f8fafc;
+    --text-secondary: #94a3b8;
+    --glass-border: rgba(255, 255, 255, 0.05);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    background-color: var(--bg-deep);
+    color: var(--text-primary);
+    font-family: 'Outfit', sans-serif;
+    min-height: 100vh;
+}
+
+.industrial-grid {
+    position: fixed; inset: 0; z-index: -1;
+    background-image: 
+        linear-gradient(rgba(255, 255, 255, 0.012) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.012) 1px, transparent 1px);
+    background-size: 40px 40px;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 4rem auto;
+    padding: 0 1.5rem;
+}
+
+/* Header Section */
+header.main-header {
+    margin-bottom: 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.tech-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--accent);
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+h1 { font-size: 3rem; font-weight: 900; letter-spacing: -0.02em; }
+
+/* Dashboard Shell */
+.dashboard-card {
+    background: var(--panel-bg);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+    border-radius: 24px;
+    padding: 2.5rem;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+/* Forms */
+.form-section {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    padding: 2rem;
+    margin-bottom: 2.5rem;
+    transition: all 0.4s ease;
+}
+
+.edit-mode-active {
+    border-color: var(--warning);
+    box-shadow: 0 0 30px rgba(245, 158, 11, 0.1);
+}
+
+.form-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.form-title {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.form-title i {
+    font-size: 1.25rem;
+    color: var(--accent);
+}
+
+.edit-mode-active .form-title i {
+    color: var(--warning);
+}
+
+form.inline-form {
+    display: grid;
+    grid-template-cols: 1fr 1fr auto;
+    gap: 1.5rem;
+    align-items: end;
+}
+
+.input-container {
+    position: relative;
+}
+
+.input-container i {
+    position: absolute;
+    left: 1rem;
+    bottom: 0.85rem;
+    opacity: 0.3;
+    font-size: 1.1rem;
+    transition: opacity 0.3s;
+}
+
+.input-container input:focus ~ i {
+    opacity: 1;
+    color: var(--accent);
+}
+
+.edit-mode-active .input-container input:focus ~ i {
+    color: var(--warning);
+}
+
+input {
+    width: 100%;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid var(--glass-border);
+    border-radius: 12px;
+    padding: 0.85rem 1rem 0.85rem 2.8rem;
+    color: white;
+    font-family: inherit;
+    transition: all 0.3s ease;
+}
+
+.btn-cancel {
+    background: rgba(239, 68, 68, 0.1);
+    color: var(--error);
+    border: 1px solid rgba(239, 68, 68, 0.2);
+    padding: 0.4rem 0.8rem;
+    border-radius: 8px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    transition: all 0.2s;
+}
+
+.btn-cancel:hover {
+    background: var(--error);
+    color: white;
+}
+
+input:focus {
+    outline: none;
+    border-color: var(--accent);
+    background: rgba(255,255,255,0.05);
+}
+
+button.btn-primary {
+    background: var(--accent);
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 10px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.2s, background 0.2s;
+}
+
+button.btn-primary:hover {
+    background: #5f6db3;
+    transform: translateY(-2px);
+}
+
+/* Table Style */
+.table-wrapper {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 0.5rem;
+}
+
+th {
+    text-align: left;
+    padding: 1rem;
+    font-family: 'JetBrains Mono';
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    opacity: 0.4;
+}
+
+tr.guest-row {
+    background: rgba(255, 255, 255, 0.02);
+    transition: transform 0.2s, background 0.2s;
+}
+
+tr.guest-row:hover {
+    background: rgba(255, 255, 255, 0.04);
+    transform: scale(1.005);
+}
+
+td {
+    padding: 1.25rem 1rem;
+}
+
+td:first-child { border-radius: 12px 0 0 12px; }
+td:last-child { border-radius: 0 12px 12px 0; }
+
+.guest-name { font-weight: 700; color: white; }
+.guest-email { font-size: 0.85rem; color: var(--text-secondary); }
+
+/* Badges */
+.badge {
+    font-size: 0.6rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    padding: 0.25rem 0.6rem;
+    border-radius: 6px;
+    border: 1px solid currentColor;
+}
+
+.badge-pending { color: var(--warning); background: rgba(245, 158, 11, 0.1); }
+.badge-confirmed { color: var(--success); background: rgba(16, 185, 129, 0.1); }
+.badge-cancelled { color: var(--error); background: rgba(239, 68, 68, 0.1); }
+
+/* Actions */
+.actions {
+    display: flex;
+    gap: 0.75rem;
+}
+
+.action-btn {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--glass-border);
+    background: rgba(255,255,255,0.03);
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.action-btn:hover { color: white; border-color: white; }
+.btn-delete:hover { color: var(--error); border-color: var(--error); }
+.btn-confirm:hover { color: var(--success); border-color: var(--success); }
+
+/* Notifications */
+.alert {
+    padding: 1rem;
+    border-radius: 12px;
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.alert-success { background: rgba(16, 185, 129, 0.1); color: var(--success); border: 1px solid var(--success); }
+.alert-error { background: rgba(239, 68, 68, 0.1); color: var(--error); border: 1px solid var(--error); }

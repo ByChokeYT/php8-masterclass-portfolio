@@ -1,0 +1,5 @@
+commit ee0b94ea005dadadcc38bf149ddbe775facfd7c5
+Author: bychoke <choque151.jlc@gmail.com>
+Date:   Sun Feb 22 11:02:40 2026 -0400
+
+    Día 1: Calculadora de Minerales (Web GUI en PHP 8.5.3)
