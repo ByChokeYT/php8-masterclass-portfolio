@@ -50,7 +50,13 @@ $projectMetadata = [
     28 => 'Buscador avanzado de contactos con filtros SQL LIKE y WHERE.',
     29 => 'Sistema de registro de gastos con sumatorias por categoría y fechas.',
     30 => 'Panel administrativo consolidado con métricas de múltiples bases de datos.',
-    31 => 'Generador de códigos QR integrando librerías externas mediante Composer.'
+    31 => 'Generador de códigos QR integrando librerías externas mediante Composer.',
+    32 => 'Scraper del clima en tiempo real para la ciudad de Oruro usando cURL y Open-Meteo.',
+    33 => 'Monitoreo de cotización de metales (Oro, Plata, Estaño) integrando API REST.',
+    34 => 'Motor de generación de facturas y reportes oficiales en formato PDF.',
+    35 => 'Sistema de exportación de reportes dinámicos a formatos Excel (XLSX) y CSV.',
+    37 => 'Acortador de URLs personalizado con persistencia en SQLite y redirecciones HTTP.',
+    38 => 'Sistema híbrido: Autenticación segura (Sessions/Cookies) + API RESTful en formato JSON.'
 ];
 
 // Definición de Fases Académicas con Paleta de Colores por Dificultad

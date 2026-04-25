@@ -1,0 +1,8 @@
+{
+    "name": "bychoke/dia-32-scraper-clima-oruro",
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    }
+}

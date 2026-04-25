@@ -1,0 +1,8 @@
+{
+    "name": "bychoke/dia-33-consumo-api-metales",
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    }
+}
