@@ -10,6 +10,14 @@
 
 ---
 
+## 📖 Guía de Aprendizaje (Paso a Paso)
+
+Hemos preparado una **documentación detallada** que explica la arquitectura del proyecto y desglosa paso a paso cómo construir sistemas industriales.
+
+👉 [**LEER LA GUÍA MAESTRA (BLOG TÉCNICO)**](guia.php)
+
+---
+
 ## 🏗️ Estructura del Aprendizaje (Fases)
 
 El curso se divide en 5 hitos fundamentales, cada uno con una dificultad y temática específica:

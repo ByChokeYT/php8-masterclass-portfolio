@@ -1,4 +1,4 @@
-PHP:5
-JavaScript:1
+PHP:6
+JavaScript:4
 Python:0
 Go:0

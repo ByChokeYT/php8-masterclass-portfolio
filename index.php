@@ -2,359 +2,295 @@
 declare(strict_types=1);
 
 /**
- * MASTERCLASS PHP 8.5 - ACADEMIC HUB v3.0
- * Interfaz Educativa para Alumnos con Progreso Global y Fases por Colores.
+ * PHP 8.5 ARCHITECT NEXUS - v6.0
+ * HUB PRINCIPAL: LA EXPERIENCIA DE APRENDIZAJE DEFINITIVA
  */
 
 readonly class ProjectNode {
     public function __construct(
         public string $id,
         public string $day,
+        public int $dayNum,
         public string $title,
         public string $description,
         public string $path,
         public string $icon,
-        public string $status = 'OPERATIONAL'
+        public string $hex,
+        public array $tags = []
     ) {}
 }
 
-// Mapeo oficial de Descripciones (Roadmap)
 $projectMetadata = [
-    1 => 'Script CLI con lógica match para valorar pureza de Estaño, Zinc y Plata.',
-    2 => 'Generador de enlaces de WhatsApp parametrizados mediante consola.',
-    3 => 'Filtro dinámico de archivos .log buscando errores críticos de sistema.',
-    4 => 'Automatización para renombrar assets masivamente en directorios.',
-    5 => 'Conversor de datos crudos JSON a formato tabular CSV para Excel.',
-    6 => 'Generador de passwords complejos usando tipado fuerte y aleatoriedad.',
-    7 => 'Lógica matemática para cálculo de fletes por peso y distancia.',
-    8 => 'Juego interactivo CLI basado en arrays y bucles de control.',
-    9 => 'Limpieza y estandarización estricta de strings mediante Regex.',
-    10 => 'Simulador de ATM con manejo de estados y bucles interactivos.',
-    11 => 'Landing Page dinámica con secciones renderizadas desde arrays.',
-    12 => 'Formulario con tablas de precios que actualizan totales dinámicamente.',
-    13 => 'Sistema de confirmación a eventos con validación de datos POST.',
-    14 => 'Módulo de carga segura restringiendo extensiones JPG y PNG.',
-    15 => 'Visor de cards que carga videos dinámicamente según ID en URL.',
-    16 => 'Sistema de acceso con manejo de sesiones ($_SESSION) en memoria.',
-    17 => 'Calculadora de liquidaciones con diseño Tailwind y lógica de Fase 1.',
-    18 => 'Motor de renderizado para convertir notas Markdown a HTML real.',
-    19 => 'Generador modular de identidad profesional con carga de retrato.',
-    20 => 'Sistema de votos con persistencia manual en .txt y analíticas AJAX.',
-    21 => 'Clase de conexión PDO inmutable con propiedades readonly para máxima seguridad.',
-    22 => 'Sistema CRUD completo para gestión de asistentes con base de datos SQLite.',
-    23 => 'Inventario transaccional de minerales con arquitectura de alta densidad.',
-    24 => 'Sistema de registro seguro con hashing de contraseñas Bcrypt.',
-    25 => 'Gestor de enlaces QR con persistencia y visualización matricial.',
-    26 => 'Muro de mensajes y deseos con seguridad XSS y diseño Glassmorphism.',
-    27 => 'Catálogo visual de servicios con extracción de datos y assets desde BD.',
-    28 => 'Buscador avanzado de contactos con filtros SQL LIKE y WHERE.',
-    29 => 'Sistema de registro de gastos con sumatorias por categoría y fechas.',
-    30 => 'Panel administrativo consolidado con métricas de múltiples bases de datos.',
-    31 => 'Generador de códigos QR integrando librerías externas mediante Composer.',
-    32 => 'Scraper del clima en tiempo real para la ciudad de Oruro usando cURL y Open-Meteo.',
-    33 => 'Monitoreo de cotización de metales (Oro, Plata, Estaño) integrando API REST.',
-    34 => 'Motor de generación de facturas y reportes oficiales en formato PDF.',
-    35 => 'Sistema de exportación de reportes dinámicos a formatos Excel (XLSX) y CSV.',
-    37 => 'Acortador de URLs personalizado con persistencia en SQLite y redirecciones HTTP.',
-    38 => 'Sistema híbrido: Autenticación segura (Sessions/Cookies) + API RESTful en formato JSON.'
+    1 => 'Ingeniería de Consola (CLI): El nacimiento de la lógica inmutable con Enums y DTOs.',
+    2 => 'Evaluación de salud profesional: Manejo de tipos de punto flotante y rangos de clasificación.',
+    3 => 'Filtrado de logs de sistema y búsqueda de patrones.',
+    4 => 'Lógica matemática aplicada a proyecciones financieras.',
+    5 => 'Formateo de datos crudos JSON a CSV industrial.',
+    6 => 'Generación de tokens seguros y claves complejas.',
+    7 => 'Manipulación de strings y análisis semántico.',
+    8 => 'Estructuras de decisión y bucles interactivos.',
+    9 => 'Regex avanzado para limpieza de datos de usuario.',
+    10 => 'Simulación de estados complejos y flujos de caja.',
+    11 => 'Primeros pasos con Tailwind CSS y renderizado PHP.',
+    12 => 'Datos dinámicos en tiempo real mediante formularios.',
+    13 => 'Confirmaciones seguras y validación estricta POST.',
+    14 => 'Manejo seguro de assets y carga de archivos.',
+    15 => 'Galería de video dinámica gestionada por ID.',
+    16 => 'Manejo de sesiones y seguridad de acceso inicial.',
+    17 => 'Dashboard web profesional para cálculos masivos.',
+    18 => 'Renderizado de contenido técnico Markdown a HTML.',
+    19 => 'Identidad profesional modular con GD Library.',
+    20 => 'Persistencia manual en archivos .txt y AJAX.',
+    21 => 'Propiedades readonly y arquitectura inmutable.',
+    22 => 'Gestión completa de invitados con base de datos SQLite.',
+    23 => 'Transacciones industriales y auditoría de tablas.',
+    24 => 'Hashing de contraseñas y capas de seguridad SQL.',
+    25 => 'Persistencia de URLs y metadatos con códigos QR.',
+    26 => 'Interacción pública masiva con base de datos.',
+    27 => 'Renderizado dinámico de servicios desde SQL.',
+    28 => 'Buscador con filtros SQL avanzados (LIKE/WHERE).',
+    29 => 'Categorización y reportes de gastos industriales.',
+    30 => 'Métricas y resúmenes técnicos de administración.',
+    31 => 'Integración de librerías externas vía Composer.',
+    32 => 'Consumo de datos externos mediante Web Scraping.',
+    33 => 'Mercado de metales en tiempo real (APIs REST).',
+    34 => 'Exportación de documentos oficiales en PDF.',
+    35 => 'Generación de reportes masivos en CSV/Excel.',
+    37 => 'Gestión de redirecciones y estados HTTP.',
+    38 => 'Autenticación híbrida y exposición de API REST.',
+    39 => 'Consumo de feeds XML técnicos y de minería.'
 ];
 
-// Definición de Fases Académicas con Paleta de Colores por Dificultad
 $faseDefinitions = [
-    1 => [
-        'title' => 'Fase 1: Fundamentos y Sintaxis Core',
-        'desc' => 'Nivel Inicial: Lógica pura en terminal para dominar las bases del lenguaje.',
-        'icon' => 'ph-terminal-window',
-        'color' => 'emerald', // Verde
-        'border' => 'border-emerald-500/30',
-        'bg_glow' => 'rgba(16, 185, 129, 0.1)',
-        'text' => 'text-emerald-400'
-    ],
-    2 => [
-        'title' => 'Fase 2: UI/UX, Tailwind y Formularios',
-        'desc' => 'Nivel Intermedio: Conexión frontend-backend y manejo de datos interactivos.',
-        'icon' => 'ph-palette',
-        'color' => 'cyan', // Azul
-        'border' => 'border-cyan-500/30',
-        'bg_glow' => 'rgba(6, 182, 212, 0.1)',
-        'text' => 'text-cyan-400'
-    ],
-    3 => [
-        'title' => 'Fase 3: Bases de Datos y Persistencia',
-        'desc' => 'Nivel Desafío: Integración con MySQL/PDO y arquitecturas de datos.',
-        'icon' => 'ph-database',
-        'color' => 'amber', // Amarillo/Ámbar
-        'border' => 'border-amber-500/30',
-        'bg_glow' => 'rgba(245, 158, 11, 0.1)',
-        'text' => 'text-amber-400'
-    ],
-    4 => [
-        'title' => 'Fase 4: APIs y Arquitectura Moderna',
-        'desc' => 'Nivel Avanzado: Servicios REST, POO avanzada y patrones de diseño.',
-        'icon' => 'ph-cloud-arrow-up',
-        'color' => 'rose', // Robusto/Rojo
-        'border' => 'border-rose-500/30',
-        'bg_glow' => 'rgba(244, 63, 94, 0.1)',
-        'text' => 'text-rose-400'
-    ],
-    5 => [
-        'title' => 'Fase 5: Proyectos Full-Stack Real-World',
-        'desc' => 'Nivel Experto: Aplicaciones completas, seguridad extrema y despliegue.',
-        'icon' => 'ph-rocket-launch',
-        'color' => 'violet', // Púrpura/Indigo
-        'border' => 'border-violet-500/30',
-        'bg_glow' => 'rgba(139, 92, 246, 0.1)',
-        'text' => 'text-violet-400'
-    ]
+    1 => ['num' => '01', 'title' => 'Fundamentos', 'ph' => 'ph-terminal-window', 'hex' => '#10b981', 'desc' => 'Dominio de lógica CLI y algoritmos.'],
+    2 => ['num' => '02', 'title' => 'Web Architecture', 'ph' => 'ph-palette', 'hex' => '#06b6d4', 'desc' => 'Interfaces reactivas y gestión web.'],
+    3 => ['num' => '03', 'title' => 'SQL Persistencia', 'ph' => 'ph-database', 'hex' => '#f59e0b', 'desc' => 'Bases de datos y hardening SQL.'],
+    4 => ['num' => '04', 'title' => 'Enterprise APIs', 'ph' => 'ph-cloud-arrow-up', 'hex' => '#f43f5e', 'desc' => 'Microservicios y Composer.'],
+    5 => ['num' => '05', 'title' => 'Expert Deploy', 'ph' => 'ph-rocket-launch', 'hex' => '#8b5cf6', 'desc' => 'Seguridad y despliegue real.']
 ];
 
-// Escaneo dinámico y Agrupación por Fase
-$fases = [];
-$projectsTotal = 0;
+$allNodes = [];
 $iterator = new DirectoryIterator(__DIR__);
-
 foreach ($iterator as $fileInfo) {
     if ($fileInfo->isDir() && !$fileInfo->isDot() && str_starts_with($fileInfo->getFilename(), 'dia-')) {
         $folderName = $fileInfo->getFilename();
-        
         $parts = explode('-', $folderName);
         $dayNum = (int)($parts[1] ?? 0);
         $rawTitle = implode(' ', array_slice($parts, 2));
         $cleanTitle = ucwords(str_replace('-', ' ', $rawTitle));
-
-        $indexPath = "/{$folderName}/index.php";
-        if (file_exists(__DIR__ . "/{$folderName}/public/index.php")) {
-            $indexPath = "/{$folderName}/public/index.php";
-        }
-
-        $icon = match(true) {
-            str_contains(strtolower($cleanTitle), 'calculadora') => 'ph-calculator',
-            str_contains(strtolower($cleanTitle), 'conversor') => 'ph-currency-circle-dollar',
-            str_contains(strtolower($cleanTitle), 'gestor') => 'ph-chart-pie-slice',
-            str_contains(strtolower($cleanTitle), 'prestamos') => 'ph-bank',
-            str_contains(strtolower($cleanTitle), 'reloj') => 'ph-clock',
-            str_contains(strtolower($cleanTitle), 'texto') => 'ph-text-aa',
-            str_contains(strtolower($cleanTitle), 'email') => 'ph-envelope',
-            str_contains(strtolower($cleanTitle), 'cajero') => 'ph-credit-card',
-            str_contains(strtolower($cleanTitle), 'landing') => 'ph-browser',
-            str_contains(strtolower($cleanTitle), 'cotizacion') => 'ph-receipt',
-            str_contains(strtolower($cleanTitle), 'rsvp') => 'ph-envelope-simple',
-            str_contains(strtolower($cleanTitle), 'archivos') => 'ph-upload-simple',
-            str_contains(strtolower($cleanTitle), 'video') => 'ph-video-camera',
-            str_contains(strtolower($cleanTitle), 'markdown') => 'ph-code-block',
-            str_contains(strtolower($cleanTitle), 'tarjetas') => 'ph-identification-card',
-            str_contains(strtolower($cleanTitle), 'encuesta') => 'ph-chart-bar',
-            str_contains(strtolower($cleanTitle), 'conexion') => 'ph-database',
-            str_contains(strtolower($cleanTitle), 'invitados') => 'ph-users-three',
-            str_contains(strtolower($cleanTitle), 'qr') => 'ph-qr-code',
-            str_contains(strtolower($cleanTitle), 'muro') || str_contains(strtolower($cleanTitle), 'comentarios') => 'ph-chat-centered-text',
-            str_contains(strtolower($cleanTitle), 'catalogo') => 'ph-image',
-            str_contains(strtolower($cleanTitle), 'buscador') => 'ph-magnifying-glass',
-            str_contains(strtolower($cleanTitle), 'gastos') => 'ph-wallet',
-            str_contains(strtolower($cleanTitle), 'dashboard') || str_contains(strtolower($cleanTitle), 'admin') => 'ph-gauge',
-            default => 'ph-cube'
-        };
-
         $faseNum = (int)ceil($dayNum / 10);
-        $fases[$faseNum][] = new ProjectNode(
-            $folderName,
-            "DÍA " . str_pad((string)$dayNum, 2, '0', STR_PAD_LEFT),
-            $cleanTitle,
-            $projectMetadata[$dayNum] ?? 'Gestión de persistencia y datos relacionales.',
-            $indexPath,
-            $icon
+        $hex = $faseDefinitions[$faseNum]['hex'] ?? '#3b82f6';
+
+        $allNodes[] = new ProjectNode(
+            $folderName, 
+            "D" . str_pad((string)$dayNum, 2, '0', STR_PAD_LEFT), 
+            $dayNum, 
+            $cleanTitle, 
+            $projectMetadata[$dayNum] ?? 'Iniciando reto técnico...', 
+            "/{$folderName}/index.php", 
+            match($dayNum) { 1 => 'ph-calculator', 2 => 'ph-currency-circle-dollar', default => 'ph-cube' },
+            $hex,
+            ['PHP 8.5', 'Industrial']
         );
-        $projectsTotal++;
     }
 }
-
-// Ordenar cada fase y calcular progreso
-foreach ($fases as $fNum => $projList) {
-    usort($fases[$fNum], fn($a, $b) => (int)filter_var($a->day, FILTER_SANITIZE_NUMBER_INT) <=> (int)filter_var($b->day, FILTER_SANITIZE_NUMBER_INT));
-}
-ksort($fases);
-
-$progressPercent = ($projectsTotal / 50) * 100;
-
+usort($allNodes, fn($a, $b) => $a->dayNum <=> $b->dayNum);
+$latestDay = !empty($allNodes) ? max(array_column($allNodes, 'dayNum')) : 0;
+$progressPercent = (count($allNodes) / 50) * 100;
 ?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>50_PROYECTOS_PHP // MASTERCLASS</title>
-    <link rel="icon" type="image/x-icon" href="https://www.php.net/favicon.ico">
+    <title>PHP ARCHITECT NEXUS // HUB</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
     <style>
-        :root {
-            --bg-deep: #05070a;
-            --panel-bg: rgba(13, 17, 23, 0.4);
-        }
-
-        body {
-            background-color: var(--bg-deep);
-            color: #94a3b8;
-            font-family: 'Outfit', sans-serif;
-            min-height: 100vh;
-        }
-
-        .industrial-grid {
-            position: fixed; inset: 0; z-index: -1;
-            background-image: 
-                linear-gradient(rgba(255, 255, 255, 0.012) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(255, 255, 255, 0.012) 1px, transparent 1px);
-            background-size: 40px 40px;
-        }
-
-        .tech-label { font-family: 'JetBrains Mono', monospace; font-size: 8px; text-transform: uppercase; letter-spacing: 0.1em; opacity: 0.5; }
+        :root { --bg: #050608; }
+        body { background: var(--bg); color: #cbd5e1; font-family: 'Plus Jakarta Sans', sans-serif; overflow-x: hidden; }
         
-        .fase-section { margin-bottom: 5rem; }
-        .fase-header { border-left: 3px solid currentColor; padding-left: 1.5rem; margin-bottom: 2.5rem; position: relative; }
-        
-        .node-card {
-            background: var(--panel-bg);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255,255,255,0.03);
-            border-radius: 16px;
-            padding: 1.25rem;
-            transition: all 0.4s cubic-bezier(0.2, 1, 0.2, 1);
-            display: flex; flex-direction: column; gap: 0.75rem;
-            height: 100%;
+        /* Efecto de Rejilla Dinámica */
+        .dynamic-grid { position: fixed; inset: 0; background-image: 
+            linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+            background-size: 50px 50px; z-index: -1;
         }
+        .dynamic-grid::after { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 50% 50%, transparent, var(--bg) 80%); }
 
-        .node-card:hover {
-            transform: translateY(-5px) scale(1.02);
+        .tech-mono { font-family: 'JetBrains Mono', monospace; }
+        
+        /* Glassmorphism Cards */
+        .glass-card { 
             background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 24px;
+            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+            position: relative;
+            overflow: hidden;
         }
-
-        .node-icon {
-            width: 40px; height: 40px;
-            background: rgba(255,255,255,0.03);
-            border-radius: 10px;
-            display: flex; align-items: center; justify-content: center;
-            font-size: 20px;
-            transition: all 0.3s ease;
+        .glass-card:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: var(--glow);
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 30px 60px -15px rgba(0,0,0,0.5), 0 0 20px -5px var(--glow);
         }
+        .glass-card::before {
+            content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.05), transparent);
+            transition: 0.5s;
+        }
+        .glass-card:hover::before { left: 100%; }
 
-        .node-card:hover .node-icon { color: white; }
+        /* Level-Up Progress Bar */
+        .xp-bar { height: 10px; background: rgba(255,255,255,0.05); border-radius: 20px; overflow: hidden; position: relative; border: 1px solid rgba(255,255,255,0.1); }
+        .xp-fill { height: 100%; background: linear-gradient(90deg, #3b82f6, #60a5fa); position: relative; }
+        .xp-fill::after { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent); animation: sweep 2s infinite; }
 
-        .progress-bar-container { height: 6px; background: rgba(255,255,255,0.05); border-radius: 10px; overflow: hidden; position: relative; }
-        .progress-bar-fill { height: 100%; background: linear-gradient(90deg, #10b981, #3b82f6); transition: width 1.5s ease-out; }
-        
-        .status-badge { font-size: 7px; padding: 2px 6px; border-radius: 4px; border: 1px solid currentColor; display: inline-flex; align-items: center; gap: 4px; }
-        .status-dot { width: 4px; height: 4px; background: currentColor; border-radius: 50%; display: inline-block; animation: pulse 2s infinite; }
-        @keyframes pulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.5; transform: scale(1.3); } }
+        @keyframes sweep { 0% { transform: translateX(-100%); } 100% { transform: translateX(100%); } }
 
-        ::-webkit-scrollbar { width: 4px; }
-        ::-webkit-scrollbar-thumb { background: #3b82f6; border-radius: 10px; }
+        .floating { animation: floating 3s ease-in-out infinite; }
+        @keyframes floating { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+
+        .search-input { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); border-radius: 20px; padding: 1rem 3rem; color: white; width: 100%; transition: all 0.3s; }
+        .search-input:focus { outline: none; border-color: #3b82f6; background: rgba(255,255,255,0.07); box-shadow: 0 0 20px rgba(59, 130, 246, 0.2); }
     </style>
 </head>
-<body class="p-8 lg:p-12 xl:p-16">
-    <div class="industrial-grid"></div>
+<body class="p-6 md:p-16 lg:p-24">
+    <div class="dynamic-grid"></div>
 
     <div class="max-w-7xl mx-auto">
-        <!-- GLOBAL HEADER EDUCATIVO -->
-        <header class="mb-20 space-y-10">
-            <div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-6">
-                <div>
-                    <div class="flex items-center gap-3 mb-2">
-                        <div class="status-badge text-emerald-400"><span class="status-dot"></span> ACADEMIA_PHP_ACTIVA</div>
-                        <span class="tech-label">CURSO_PREMIUM // 50_DÍAS // v3.0</span>
-                    </div>
-                    <h1 class="text-6xl font-black text-white uppercase tracking-tighter leading-none">
-                        50_PROYECTOS_<span class="text-[#4F5B93]">PHP</span><br>
-                        <span class="text-3xl font-light tracking-[0.2em] opacity-40">MASTERCLASS</span>
-                    </h1>
+        
+        <!-- HEADER Dashboard -->
+        <header class="flex flex-col lg:flex-row justify-between items-start gap-12 mb-32">
+            <div class="space-y-4">
+                <div class="flex items-center gap-3">
+                    <span class="px-3 py-1 bg-blue-500/10 text-blue-400 rounded-full text-[10px] font-black tracking-widest uppercase border border-blue-500/20">SYSTEM_READY // PHP_8.5</span>
+                    <span class="tech-mono text-[10px] opacity-30">Nexus_Core_v6.0</span>
                 </div>
-                <div class="text-right w-full md:w-auto">
-                    <div class="flex justify-between md:justify-end gap-12 mb-4">
-                        <div class="text-left">
-                            <span class="tech-label">Progreso_Global</span>
-                            <div class="text-3xl font-black text-white"><?= round($progressPercent) ?>%</div>
-                        </div>
-                        <div>
-                            <span class="tech-label">Nodos_Completos</span>
-                            <div class="text-3xl font-black text-white font-mono"><?= str_pad((string)$projectsTotal, 2, '0', STR_PAD_LEFT) ?>/50</div>
-                        </div>
+                <h1 class="text-6xl md:text-8xl font-black text-white tracking-tighter leading-none italic uppercase">
+                    HELLO!<br><span class="text-blue-500">WORLD_PHP</span>
+                </h1>
+                <p class="text-lg text-slate-400 max-w-xl font-medium leading-relaxed">
+                    Bienvenido a la academia de ingeniería de élite. Supera los <span class="text-white">50 retos</span> para alcanzar el rango de Arquitecto Enterprise.
+                </p>
+            </div>
+
+            <div class="w-full lg:w-96 space-y-6">
+                <div class="relative group">
+                    <i class="ph ph-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-slate-500 group-focus-within:text-blue-500 transition-colors"></i>
+                    <input type="text" id="projectSearch" placeholder="Buscar reto o tecnología..." class="search-input tech-mono text-xs">
+                </div>
+                <div class="space-y-2">
+                    <div class="flex justify-between items-end px-1">
+                        <span class="tech-mono text-[10px] font-bold">Overall_Progress</span>
+                        <span class="text-2xl font-black text-white italic"><?= round($progressPercent) ?>%</span>
                     </div>
-                    <div class="progress-bar-container w-full md:w-64">
-                        <div class="progress-bar-fill" style="width: <?= $progressPercent ?>%"></div>
+                    <div class="xp-bar">
+                        <div class="xp-fill" style="width: <?= $progressPercent ?>%"></div>
                     </div>
                 </div>
             </div>
         </header>
 
-        <!-- FASES ACADÉMICAS -->
-        <?php foreach ($fases as $fNum => $nodes): 
-            $f = $faseDefinitions[$fNum];
-        ?>
-            <section class="fase-section">
-                <div class="fase-header <?= $f['text'] ?>">
-                    <div class="flex items-center gap-4 mb-3">
-                        <div class="p-3 bg-white/5 rounded-xl border <?= $f['border'] ?>">
-                            <i class="ph-bold <?= $f['icon'] ?> text-2xl"></i>
+        <!-- MÓDULOS Dashboard -->
+        <div id="nodesContainer" class="space-y-32">
+            <?php 
+            $fasesInNodes = [];
+            foreach ($allNodes as $node) {
+                $fNum = (int)ceil($node->dayNum / 10);
+                $fasesInNodes[$fNum][] = $node;
+            }
+            ksort($fasesInNodes);
+
+            foreach ($fasesInNodes as $fNum => $nodes): 
+                $f = $faseDefinitions[$fNum];
+            ?>
+                <section class="phase-section" data-fase="<?= $fNum ?>">
+                    <div class="flex items-center gap-6 mb-12 border-l-4 pl-8" style="border-color: <?= $f['hex'] ?>">
+                        <div class="p-4 rounded-2xl bg-white/5 floating" style="color: <?= $f['hex'] ?>">
+                            <i class="ph-fill <?= $f['ph'] ?> text-4xl"></i>
                         </div>
                         <div>
-                            <h2 class="text-2xl font-black uppercase tracking-tight text-white"><?= $f['title'] ?></h2>
-                            <span class="tech-label opacity-100 <?= $f['text'] ?>">Dificultad_Nivel_<?= $fNum ?></span>
+                            <div class="tech-mono text-[10px] font-bold" style="color: <?= $f['hex'] ?>">Módulo_<?= $f['num'] ?></div>
+                            <h2 class="text-4xl font-black text-white uppercase italic tracking-tighter"><?= $f['title'] ?></h2>
+                            <p class="text-sm text-slate-500 font-medium"><?= $f['desc'] ?></p>
                         </div>
                     </div>
-                    <p class="text-sm text-slate-500 max-w-3xl leading-relaxed">
-                        <?= $f['desc'] ?>
-                    </p>
-                </div>
 
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-                    <?php foreach ($nodes as $project): ?>
-                        <a href="<?= $project->path ?>" class="node-card group hover:<?= $f['border'] ?>" style="--hover-glow: <?= $f['bg_glow'] ?>">
-                            <div class="flex justify-between items-start">
-                                <div class="node-icon group-hover:bg-<?= $f['color'] ?>-500">
-                                    <i class="ph <?= $project->icon ?> group-hover:text-white transition-colors opacity-40 group-hover:opacity-100"></i>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                        <?php foreach ($nodes as $p): 
+                            $isLatest = ($p->dayNum === $latestDay);
+                        ?>
+                            <a href="<?= $p->path ?>" class="glass-card p-8 group flex flex-col justify-between min-h-[280px]" style="--glow: <?= $p->hex ?>50">
+                                <div>
+                                    <div class="flex justify-between items-center mb-8">
+                                        <div class="tech-mono text-[11px] font-black" style="color: <?= $p->hex ?>"><?= $p->day ?></div>
+                                        <div class="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center group-hover:scale-125 transition-transform duration-500">
+                                            <i class="ph-bold <?= $p->icon ?> text-xl" style="color: <?= $p->hex ?>"></i>
+                                        </div>
+                                    </div>
+                                    <h3 class="text-lg font-black text-white mb-3 group-hover:text-blue-400 transition-colors uppercase leading-tight"><?= $p->title ?></h3>
+                                    <p class="text-xs leading-relaxed opacity-40 font-medium group-hover:opacity-100 transition-opacity"><?= $p->description ?></p>
                                 </div>
-                                <span class="tech-label opacity-40 font-bold group-hover:opacity-100 transition-opacity"><?= $project->day ?></span>
-                            </div>
-                            
-                            <div class="flex-1 space-y-2">
-                                <h3 class="text-white font-bold text-base group-hover:<?= $f['text'] ?> transition-colors leading-tight">
-                                    <?= $project->title ?>
-                                </h3>
-                                <p class="text-[10px] text-slate-500 leading-relaxed font-medium">
-                                    <?= $project->description ?>
-                                </p>
-                            </div>
 
-                            <div class="flex items-center justify-between mt-4 pt-4 border-t border-white/5 h-8">
-                                <div class="status-badge !border-none !p-0 opacity-40 group-hover:opacity-100 <?= $f['text'] ?>">
-                                    <span class="status-dot"></span> ENTRAR_AL_RETO
+                                <div class="mt-8 flex justify-between items-center">
+                                    <div class="flex gap-1">
+                                        <?php foreach ($p->tags as $tag): ?>
+                                            <span class="px-2 py-0.5 rounded-md bg-white/5 text-[7px] font-bold tech-mono text-slate-500"><?= $tag ?></span>
+                                        <?php endforeach; ?>
+                                    </div>
+                                    <div class="w-8 h-8 rounded-full border border-white/10 flex items-center justify-center transform group-hover:translate-x-2 transition-all duration-300">
+                                        <i class="ph ph-arrow-right text-xs"></i>
+                                    </div>
                                 </div>
-                                <i class="ph-bold ph-arrow-right text-[10px] transform group-hover:translate-x-1 transition-transform opacity-0 group-hover:opacity-100 <?= $f['text'] ?>"></i>
-                            </div>
-                        </a>
-                    <?php endforeach; ?>
-                </div>
-            </section>
-        <?php endforeach; ?>
 
-        <!-- FOOTER ACADÉMICO -->
-        <footer class="mt-32 border-t border-white/5 pt-12 flex flex-col md:flex-row justify-between items-center gap-8 opacity-20">
-            <div class="flex items-center gap-4">
-                <i class="ph-fill ph-graduation-cap text-3xl"></i>
-                <span class="tech-label text-[10px]">Plataforma de Formación Continua // By Choke // 2024</span>
+                                <?php if ($isLatest): ?>
+                                    <div class="absolute top-0 right-0 p-1">
+                                        <div class="px-2 py-0.5 bg-blue-500 text-[6px] font-black text-white rounded-bl-lg">NEW_RETO</div>
+                                    </div>
+                                <?php endif; ?>
+                            </a>
+                        <?php endforeach; ?>
+                    </div>
+                </section>
+            <?php endforeach; ?>
+        </div>
+
+        <!-- FOOTER Dashboard -->
+        <footer class="mt-48 pt-24 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-10">
+            <div class="flex items-center gap-6">
+                <div class="text-2xl font-black text-white italic">HELLO!<span class="text-blue-500">W_PHP</span></div>
+                <div class="h-10 w-px bg-white/10"></div>
+                <div class="tech-mono text-[10px] space-y-1">
+                    <p class="text-blue-500 font-bold">Architect_Nexus_System</p>
+                    <p class="opacity-30">Build_Status: Operational_2026</p>
+                </div>
             </div>
-            <div class="flex gap-12">
-                <span class="tech-label text-[10px]">Fase_Current: 0x02</span>
-                <span class="tech-label text-[10px]">Data_Sync: Cloud_Active</span>
+            <div class="flex gap-12 text-slate-600 tech-mono text-[8px] font-bold uppercase tracking-[4px]">
+                <span>Engineering_Excellence</span>
+                <span>By_Choke // Professional_Edition</span>
             </div>
         </footer>
+
     </div>
 
-    <style>
-        /* Inyectar dinámicamente los estilos de hover glow */
-        .node-card:hover {
-            box-shadow: 0 15px 40px -10px var(--hover-glow);
-        }
-    </style>
+    <script>
+        document.getElementById('projectSearch').addEventListener('input', (e) => {
+            const term = e.target.value.toLowerCase();
+            document.querySelectorAll('.glass-card').forEach(node => {
+                const title = node.querySelector('h3').innerText.toLowerCase();
+                const desc = node.querySelector('p').innerText.toLowerCase();
+                const isMatch = title.includes(term) || desc.includes(term);
+                node.parentElement.style.display = isMatch ? 'block' : 'none';
+            });
+            document.querySelectorAll('.phase-section').forEach(section => {
+                const visible = Array.from(section.querySelectorAll('.glass-card')).some(n => n.parentElement.style.display !== 'none');
+                section.style.display = visible ? 'block' : 'none';
+            });
+        });
+    </script>
 </body>
 </html>

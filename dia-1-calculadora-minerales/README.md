@@ -1,41 +1,60 @@
-# Día 01 - Calculadora de Minerales
+# Día 01 — Calculadora de Minerales CLI
+## Masterclass PHP 8.5 | Fase 1: Dominio de la Terminal
 
-Este es el **Proyecto 1** de la serie de 50 proyectos en PHP (Fase 1 adaptada a GUI). Consiste en una calculadora moderna para liquidar el pago de minerales como Estaño, Zinc y Plata, tomando en cuenta factores reales de mercado como el peso bruto, la cotización y la **pureza o ley** del mineral.
+Este es el proyecto inicial de la serie de 50 retos. Aquí sentamos las bases de la **Arquitectura Inmutable** y el manejo de tipos estrictos en PHP moderno.
 
-## ✨ Características (PHP 8.5.3)
+---
 
-*   **Tipado Estricto:** Declaración `declare(strict_types=1);` en todos los archivos.
-*   **Enums (PHP 8.1+):** Uso de una enumeración `MineralType` para listar los minerales permitidos, devolviendo strings, emojis y símbolos químicos con `match()`.
-*   **Readonly Classes (PHP 8.2+):** Data Transfer Object (`Liquidacion`) inmutable para asegurar la integridad de los datos en memoria.
-*   **Expresión Match (PHP 8.0+):** Lógica de cálculo centralizada manejando condiciones complejas o descuentos por impurezas según el mineral elegido.
-*   **Diseño Premium UI/UX:** Interfaz web *Glassmorphism* usando variables CSS modernas y el patrón de diseño PRG (Post/Redirect/Get) junto con variables de sesión Flash para manejar de manera limpia el recargo de páginas en PHP.
+## 🛠️ Tecnologías Aplicadas
+- **PHP 8.5** (Readonly Classes y Enums respaldados).
+- **Tipado Estricto** (`declare(strict_types=1)`).
+- **Aritmética Entera** (Prevención de errores de punto flotante).
+- **ANSI Colors** (Interfaz profesional en terminal).
 
-## 📂 Estructura del Proyecto (PSR)
+---
 
-```text
-01-calculadora-minerales/
-├── public/                 # Document Root para el servidor web
-│   ├── css/
-│   │   └── style.css       # Hoja de estilos premium Glassmorphism
-│   └── index.php           # Front Controller y Vista HTML (Formulario)
-├── src/                    # Lógica del negocio (Backend puro)
-│   ├── DTO/
-│   │   └── Liquidacion.php # Clase inmutable (readonly) que porta datos
-│   ├── Enums/
-│   │   └── MineralType.php # Constantes tipadas de minerales
-│   └── Services/
-│       └── CalculatorService.php # Servicio matemático para liquidar totales
-├── calculadora.php         # (Opcional) Script versión CLI que creamos antes
-└── README.md               # Esta documentación
-```
-
-## 🚀 Cómo Ejecutar (Servidor Local)
-
-Para ver la aplicación web funcionando con todo su diseño, levanta el servidor integrado de PHP apuntando a la carpeta `public` en el puerto `8001`:
-
+## 📂 Estructura del Proyecto
 ```bash
-cd 01-calculadora-minerales
-php -S localhost:8001 -t public/
+dia-01-calculadora-minerales/
+├── main.php                    # Punto de entrada (Menú Interactivo)
+├── src/
+│   ├── Enums/MineralType.php   # Tipos seguros de minerales
+│   ├── DTO/Liquidacion.php     # Contenedor de datos inmutable
+│   └── Services/Calculator.php  # Lógica de cálculo industrial
+└── soluciones/                 # Repositorio de retos resueltos
 ```
 
-Luego, abre tu navegador y visita: [http://localhost:8001](http://localhost:8001)
+---
+
+## 🚀 Cómo Ejecutar
+1. Abre tu terminal (Laragon Terminal o PowerShell).
+2. Navega hasta esta carpeta: `cd dia-01-calculadora-minerales`
+3. Ejecuta el script principal:
+   ```bash
+   php main.php
+   ```
+
+---
+
+## 🏆 Desafíos y Soluciones
+Si quieres subir de nivel, dentro de la carpeta `soluciones/` encontrarás la implementación oficial de los retos propuestos:
+
+1.  **Nivel 1 - Básico (`soluciones/nivel-1-basico`)**: 
+    - Se añade el mineral **ORO** al sistema.
+    - Implementación de primas de mercado (+5%).
+2.  **Nivel 2 - Intermedio (`soluciones/nivel-2-intermedio`)**: 
+    - Implementación de bucle `while` para realizar múltiples cálculos sin reiniciar.
+3.  **Nivel 3 - Avanzado (`soluciones/nivel-3-avanzado`)**: 
+    - **Historial de Sesión**: Se guardan los resultados en un array.
+    - **Reporte Final**: Al salir, se muestra un resumen con el total de USD acumulado.
+
+---
+
+## 🧠 Conceptos que aprenderás
+- **DTO (Data Transfer Object)**: Por qué proteger la integridad de los datos.
+- **Enums**: Cómo eliminar los "magic strings" y centralizar la lógica de tipos.
+- **Match Expression**: La alternativa moderna y potente al `switch`.
+- **intdiv() & round()**: Por qué el dinero se calcula en centavos (enteros).
+
+---
+*Diseñado para la Masterclass de PHP 8.5 — Ingeniería de Software desde el Día 01.*

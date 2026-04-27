@@ -61,8 +61,8 @@ body{padding-top:52px!important;}
 </style>
 
 <nav class="_nav-bar">
-    <a href="http://localhost:8000" class="_nav-back">
-        ← Portal Academia
+    <a href="/" class="_nav-back">
+        ← VOLVER AL HUB
     </a>
     <div class="_nav-divider"></div>
     <span class="_nav-label"><?= $dayLabel ?? 'DÍA' ?></span>
