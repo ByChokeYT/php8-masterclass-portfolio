@@ -1,7 +1,7 @@
 <?php
 /**
- * REDIRECCIÓN AL FRONT CONTROLLER
- * Este archivo asegura que cualquier petición a la raíz sea enviada a /public
+ * FRONT CONTROLLER FALLBACK
+ * Si no se usa un servidor con .htaccess, el tráfico cae aquí e inyectamos public/index.php
+ * Esto mantiene la URL limpia (sin /public/ visible al usuario).
  */
-header("Location: /public/index.php");
-exit;
+require __DIR__ . '/public/index.php';

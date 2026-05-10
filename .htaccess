@@ -1,0 +1,12 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Reescribir peticiones de /assets/ directamente a la carpeta /public/assets/
+    RewriteRule ^assets/(.*)$ public/assets/$1 [L]
+
+    # Enviar el resto del tráfico al Front Controller
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_URI} !^/public/
+    RewriteRule ^(.*)$ public/index.php [QSA,L]
+</IfModule>

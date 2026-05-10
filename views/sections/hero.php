@@ -1,77 +1,134 @@
-<section class="min-h-screen flex items-center justify-center relative pt-32 pb-20 overflow-hidden">
-    
-    <!-- Academic Elite Layout -->
-    <div class="max-w-7xl mx-auto px-8 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative z-10">
-        
-        <!-- Left Side: Academy Content -->
-        <div class="stagger-item translate-y-10 max-w-2xl">
-            <div class="inline-flex items-center gap-3 px-4 py-2 rounded-full border border-indigo-500/10 bg-indigo-500/5 mb-10 shadow-[0_0_15px_rgba(99,102,241,0.1)]">
-                <i class="ph-fill ph-graduation-cap text-indigo-400"></i>
-                <span class="text-[9px] font-black text-indigo-400 uppercase tracking-[0.3em]">Official_Academy_v2.5</span>
-            </div>
-            
-            <h1 class="text-5xl md:text-6xl font-black text-white tracking-tighter uppercase italic leading-[1] mb-8">
-                De Programador a<br>
-                <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-cyan-400">Arquitecto de Software</span><br>
-                <span class="text-white/90 text-4xl md:text-5xl">En 50 Retos</span>
-            </h1>
-            
-            <p class="text-lg md:text-xl text-slate-500 font-medium leading-relaxed mb-10 max-w-lg">
-                Domina <span class="text-indigo-400 font-bold">PHP 8.5</span>, Clean Architecture y Patrones de Diseño construyendo sistemas de grado industrial desde cero. Sin teoría aburrida, solo código real.
-            </p>
-            
-            <div class="mb-10">
-                <a href="#timeline" class="inline-block px-10 py-5 rounded-2xl bg-indigo-500 text-white font-black uppercase tracking-widest text-xs hover:bg-indigo-400 hover:-translate-y-1 transition-all shadow-[0_15px_40px_rgba(99,102,241,0.3)] mb-4">
-                    Acceder al Laboratorio
-                </a>
-                <div class="flex items-center gap-4 text-xs font-bold text-slate-500 flex-wrap">
-                    <span class="flex items-center gap-1"><i class="ph-fill ph-rocket-launch text-indigo-400"></i> +50 Proyectos Prácticos</span>
-                    <span class="w-1 h-1 rounded-full bg-slate-700 hidden sm:block"></span>
-                    <span class="flex items-center gap-1"><i class="ph-fill ph-shield-check text-cyan-400"></i> Acceso de por Vida</span>
-                    <span class="w-1 h-1 rounded-full bg-slate-700 hidden sm:block"></span>
-                    <span class="flex items-center gap-1"><i class="ph-fill ph-star text-amber-400"></i> 4.9/5 Rating</span>
-                </div>
+<section class="min-h-screen flex items-center justify-center relative pt-24 pb-20 overflow-hidden">
+
+    <!-- Luces de ambiente -->
+    <div class="absolute top-1/4 left-1/3 w-[700px] h-[700px] rounded-full blur-[120px] pointer-events-none" style="background: radial-gradient(circle, rgba(99,102,241,0.12) 0%, transparent 70%);"></div>
+    <div class="absolute bottom-0 right-0 w-[500px] h-[500px] rounded-full blur-[100px] pointer-events-none" style="background: radial-gradient(circle, rgba(6,182,212,0.07) 0%, transparent 70%);"></div>
+
+    <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center w-full">
+
+        <!-- LEFT: Copy -->
+        <div class="lg:col-span-7 space-y-8" data-aos="fade-right">
+
+            <!-- Badge animado -->
+            <div class="badge-pill">
+                <span class="w-1.5 h-1.5 rounded-full bg-indigo-400 animate-pulse"></span>
+                PHP_Masterclass_v8.5 · 50 Proyectos
             </div>
 
-            <!-- Social Proof Avatars -->
-            <div class="flex items-center gap-4">
-                <div class="flex -space-x-4">
-                    <img class="w-10 h-10 rounded-full border-2 border-[#0f111a]" src="https://i.pravatar.cc/100?img=1" alt="Student avatar">
-                    <img class="w-10 h-10 rounded-full border-2 border-[#0f111a]" src="https://i.pravatar.cc/100?img=2" alt="Student avatar">
-                    <img class="w-10 h-10 rounded-full border-2 border-[#0f111a]" src="https://i.pravatar.cc/100?img=3" alt="Student avatar">
-                    <div class="w-10 h-10 rounded-full border-2 border-[#0f111a] bg-indigo-500 flex items-center justify-center text-[10px] font-black text-white">
-                        +2k
-                    </div>
+            <!-- Título -->
+            <h1 class="text-5xl md:text-6xl lg:text-7xl font-black text-white tracking-tighter leading-[1.0]">
+                De Coder<br>a <span class="grad-text">Arquitecto</span><br>
+                <span class="text-slate-500 font-black text-4xl md:text-5xl">Backend</span>
+            </h1>
+
+            <!-- Descripción -->
+            <p class="text-lg text-slate-400 leading-relaxed max-w-xl font-medium">
+                Aprende PHP moderno con el rigor de un ingeniero Senior. 
+                <strong class="text-white">Clean Architecture, OOP avanzado, PDO, APIs REST</strong> y más —
+                a través de proyectos de grado industrial, no tutoriales de YouTube.
+            </p>
+
+            <!-- CTAs -->
+            <div class="flex flex-col sm:flex-row gap-4">
+                <a href="#proyectos"
+                   class="px-8 py-4 rounded-xl bg-gradient-to-r from-indigo-600 to-cyan-500 text-white font-black text-xs uppercase tracking-widest hover:-translate-y-1 hover:shadow-[0_15px_40px_rgba(99,102,241,0.35)] transition-all flex items-center justify-center gap-2 shadow-lg shadow-indigo-600/25">
+                    <i class="ph-bold ph-terminal-window text-lg"></i>
+                    Iniciar Laboratorio
+                </a>
+                <a href="https://github.com/ByChokeYT/php8-masterclass-portfolio" target="_blank"
+                   class="px-8 py-4 rounded-xl border border-white/10 bg-white/5 text-white font-bold text-xs uppercase tracking-widest hover:bg-white/10 hover:border-white/20 transition-all flex items-center justify-center gap-2">
+                    <i class="ph-bold ph-github-logo text-lg"></i>
+                    Ver en GitHub
+                </a>
+            </div>
+
+            <!-- Stats -->
+            <div class="flex flex-wrap gap-8 pt-6 border-t border-white/5">
+                <div>
+                    <div class="text-3xl font-black text-white">50+</div>
+                    <div class="section-label mt-1">Proyectos</div>
                 </div>
-                <div class="text-[10px] font-bold text-slate-500 uppercase tracking-widest">
-                    Únete a +2,000 desarrolladores<br>elevando su código hoy.
+                <div>
+                    <div class="text-3xl font-black text-cyan-400">10+</div>
+                    <div class="section-label mt-1">Años Exp.</div>
+                </div>
+                <div>
+                    <div class="text-3xl font-black text-indigo-400">5</div>
+                    <div class="section-label mt-1">Módulos</div>
+                </div>
+                <div class="flex items-center gap-3">
+                    <div class="flex -space-x-2">
+                        <?php foreach ([11,12,13] as $i): ?>
+                            <img class="w-9 h-9 rounded-full border-2 border-[#050608]"
+                                 src="https://i.pravatar.cc/80?img=<?= $i ?>" alt="Student">
+                        <?php endforeach; ?>
+                        <div class="w-9 h-9 rounded-full border-2 border-[#050608] bg-indigo-600 flex items-center justify-center text-[9px] font-black text-white">+2k</div>
+                    </div>
+                    <div class="section-label">Alumnos</div>
                 </div>
             </div>
         </div>
 
-        <!-- Right Side: School Visuals -->
-        <div class="relative stagger-item translate-y-10 flex justify-center lg:justify-end">
-            <div class="relative w-full max-w-lg group">
-                <div class="absolute -inset-1 bg-gradient-to-r from-indigo-500/20 to-cyan-500/20 blur-2xl rounded-[3rem] opacity-30 group-hover:opacity-50 transition-all duration-1000"></div>
-                
-                <div class="relative rounded-[3rem] overflow-hidden border border-white/10 bg-obsidian shadow-2xl">
-                    <img src="/public/assets/img/hero_elephant.png" alt="PHP Academy" class="w-full h-auto scale-105 group-hover:scale-110 transition-transform duration-1000">
-                </div>
+        <!-- RIGHT: Visual card -->
+        <div class="lg:col-span-5 flex justify-center" data-aos="fade-left" data-aos-delay="150">
+            <div class="relative w-full max-w-sm group">
 
-                <!-- Academy Badges -->
-                <div class="absolute -top-6 -right-6 p-4 rounded-2xl bg-[#0f111a]/90 backdrop-blur-xl border border-indigo-500/20 shadow-2xl">
-                    <div class="flex items-center gap-3">
-                        <i class="ph-fill ph-check-square text-green-400"></i>
-                        <span class="text-[9px] font-bold text-white tech-mono uppercase tracking-widest">Syllabus_Ready</span>
+                <!-- Glow trasero -->
+                <div class="absolute -inset-4 rounded-[3rem] blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-1000"
+                     style="background: linear-gradient(135deg, rgba(99,102,241,0.2), rgba(6,182,212,0.15));"></div>
+
+                <!-- Card principal -->
+                <div class="relative glass rounded-[2.5rem] p-1.5 shadow-2xl">
+                    <div class="rounded-[2.2rem] overflow-hidden relative flex items-center justify-center aspect-square"
+                         style="background: linear-gradient(135deg, #0d0f16 0%, #070810 100%);">
+
+                        <!-- Grid overlay -->
+                        <div class="absolute inset-0 opacity-20"
+                             style="background-image: linear-gradient(rgba(99,102,241,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(99,102,241,0.1) 1px, transparent 1px); background-size: 30px 30px;"></div>
+
+                        <img src="/assets/img/hero_elephant.png"
+                             alt="PHP Elephant Mascot"
+                             class="w-4/5 h-auto relative z-10 drop-shadow-[0_0_40px_rgba(99,102,241,0.5)] group-hover:scale-105 transition-transform duration-700"
+                             style="mix-blend-mode: lighten;">
                     </div>
                 </div>
-                
-                <div class="absolute -bottom-6 -left-6 p-5 rounded-2xl bg-[#0f111a]/90 backdrop-blur-xl border border-white/10 shadow-2xl">
-                    <div class="text-[8px] font-black text-slate-500 uppercase tracking-widest mb-1">Knowledge_Base</div>
-                    <div class="text-indigo-400 font-bold tech-mono text-xs">50+ MASTER_PROJECTS</div>
+
+                <!-- Badge: PHP Version -->
+                <div class="absolute -top-4 -right-4 md:-right-8 glass px-4 py-3 rounded-2xl shadow-xl border-indigo-500/20"
+                     style="animation: float1 4s ease-in-out infinite;">
+                    <div class="flex items-center gap-2.5">
+                        <div class="w-9 h-9 rounded-full flex items-center justify-center" style="background: rgba(99,102,241,0.15); border: 1px solid rgba(99,102,241,0.2);">
+                            <i class="ph-fill ph-code text-lg text-indigo-400"></i>
+                        </div>
+                        <div>
+                            <div class="section-label text-[8px]">PHP Core</div>
+                            <div class="text-sm font-black text-white">v8.5 Ready</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Badge: Terminal -->
+                <div class="absolute -bottom-4 -left-4 md:-left-8 glass px-4 py-3 rounded-2xl shadow-xl"
+                     style="animation: float2 5s ease-in-out infinite;">
+                    <div class="flex items-center gap-1.5 mb-1.5 pb-1.5 border-b border-white/10">
+                        <span class="w-2 h-2 rounded-full bg-red-400"></span>
+                        <span class="w-2 h-2 rounded-full bg-amber-400"></span>
+                        <span class="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
+                        <span class="ml-1 text-[9px] tech-mono text-slate-500">bash</span>
+                    </div>
+                    <div class="tech-mono text-[11px]">
+                        <span class="text-slate-600">$</span>
+                        <span class="text-indigo-400"> php</span>
+                        <span class="text-cyan-400"> main.php</span>
+                    </div>
                 </div>
             </div>
         </div>
 
     </div>
+
+    <style>
+        @keyframes float1 { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)} }
+        @keyframes float2 { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-6px)} }
+    </style>
 </section>

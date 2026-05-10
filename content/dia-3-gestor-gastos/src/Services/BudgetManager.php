@@ -5,13 +5,28 @@ namespace App\Services;
 
 use App\Classes\Transaction;
 
+/**
+ * Capa de Servicio: BudgetManager (Gestor de Presupuesto)
+ * 
+ * Esta clase se encarga de abstraer TODA la lógica de negocio y persistencia
+ * de datos relacionada con las transacciones. El archivo index.php nunca debe
+ * tocar $_SESSION directamente; debe pedirle a BudgetManager que lo haga.
+ */
 class BudgetManager {
+    /**
+     * @var string Clave bajo la cual se guardan los datos en $_SESSION
+     */
     private const SESSION_KEY = 'transactions_v1';
 
+    /**
+     * Constructor: Asegura que la sesión esté iniciada y la estructura de datos exista.
+     */
     public function __construct() {
+        // Verifica si la sesión ya está activa antes de llamar a session_start()
         if (session_status() === PHP_SESSION_NONE) {
             session_start();
         }
+        // Si es la primera vez que el usuario entra, inicializamos un array vacío
         if (!isset($_SESSION[self::SESSION_KEY])) {
             $_SESSION[self::SESSION_KEY] = [];
         }

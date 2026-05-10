@@ -1,14 +1,14 @@
-<footer class="mt-40 border-t border-white/5 bg-black/40 backdrop-blur-3xl pt-24 pb-12">
+<footer class="mt-20 border-t border-white/5 pt-20 pb-12" style="background: rgba(0,0,0,0.4);">
     <div class="max-w-7xl mx-auto px-6">
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-16 mb-24">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
             
             <!-- Brand Column -->
-            <div class="md:col-span-2 space-y-8">
-                <a href="#" class="flex items-center gap-5 group">
-                    <div class="w-14 h-14 rounded-2xl overflow-hidden border border-white/10 group-hover:border-cyan-400/30 transition-all duration-500 shadow-xl bg-white/5">
-                        <img src="/public/assets/img/logo.gif" alt="ByChoke Logo" class="w-full h-full object-cover logo-white">
+            <div class="md:col-span-2 space-y-6">
+                <a href="/" class="flex items-center gap-4 group">
+                    <div class="w-12 h-12 rounded-2xl overflow-hidden border border-white/10 group-hover:border-indigo-500/30 transition-all bg-white/5 shrink-0">
+                        <img src="/assets/img/logo.gif" alt="ByChoke Logo" class="w-full h-full object-cover logo-filter">
                     </div>
-                    <div class="text-3xl font-black text-white tracking-tighter uppercase italic brand-text">ByChoke<span class="text-indigo-400 ml-2">Studios</span></div>
+                    <div class="text-2xl font-black text-white tracking-tight">ByChoke<span class="text-indigo-400">Studios</span></div>
                 </a>
                 <p class="text-slate-500 max-w-sm text-lg leading-relaxed italic">
                     Forjando arquitectos de software bajo los estándares más exigentes de la industria moderna.

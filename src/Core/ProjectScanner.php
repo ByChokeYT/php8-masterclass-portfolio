@@ -44,8 +44,10 @@ class ProjectScanner
         $dayNum = (int)($parts[1] ?? 0);
         $rawTitle = implode(' ', array_slice($parts, 2));
         
+        // Priorizar el manual pedagógico (index.php) en la raíz
         $webPath = "/content/{$folder}/index.php";
-        if (file_exists($this->contentPath . "/{$folder}/public/index.php")) {
+        // Si no existe el manual, pero sí la app web, usar la app web
+        if (!file_exists($this->contentPath . "/{$folder}/index.php") && file_exists($this->contentPath . "/{$folder}/public/index.php")) {
             $webPath = "/content/{$folder}/public/index.php";
         }
 

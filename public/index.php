@@ -17,7 +17,18 @@ use App\Data\ProjectRepository;
 // Iniciar métricas de rendimiento
 $perf = new Performance();
 
-// Escanear proyectos
+// Enrutador básico para acceder a los proyectos individuales
+$requestUri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+if (str_starts_with($requestUri, '/content/')) {
+    $targetFile = realpath(__DIR__ . '/..' . $requestUri);
+    // Verificación de seguridad para evitar path traversal
+    if ($targetFile && str_starts_with($targetFile, realpath(__DIR__ . '/../content/')) && is_file($targetFile)) {
+        require $targetFile;
+        exit;
+    }
+}
+
+// Escanear proyectos para la página principal
 $scanner = new ProjectScanner(__DIR__ . '/../content');
 $projects = $scanner->getProjects();
 $phases = ProjectRepository::getPhases();

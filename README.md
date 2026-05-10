@@ -1,129 +1,196 @@
-# 🐘 50_PROYECTOS_PHP // MASTERCLASS
+# 🐘 PHP Masterclass — ByChoke Studios
 
-![Masterclass Banner](https://img.shields.io/badge/PHP-8.5-4F5B93?style=for-the-badge&logo=php&logoColor=white)
-![Status](https://img.shields.io/badge/Progress-39%20%2F%2050-emerald?style=for-the-badge)
-![UI](https://img.shields.io/badge/UI-Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css)
+![PHP](https://img.shields.io/badge/PHP-8.5-4F5B93?style=for-the-badge&logo=php&logoColor=white)
+![Vue.js](https://img.shields.io/badge/Vue.js-3.x-4FC08D?style=for-the-badge&logo=vue.js&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind-CSS-38B2AC?style=for-the-badge&logo=tailwind-css)
+![Progreso](https://img.shields.io/badge/Proyectos-38%20%2F%2050-6366f1?style=for-the-badge)
 
-> **"Un viaje del Bit a la Arquitectura."** 🚀
-> 
-> Repositorio oficial de la Masterclass PHP 8.5 por **By Choke**. Una plataforma académica diseñada para transformar a entusiastas en desarrolladores PHP profesionales a través de 50 retos prácticos e industriales.
-
----
-
-## 📖 Guía de Aprendizaje (Paso a Paso)
-
-Hemos preparado una **documentación detallada** que explica la arquitectura del proyecto y desglosa paso a paso cómo construir sistemas industriales.
-
-👉 [**LEER LA GUÍA MAESTRA (BLOG TÉCNICO)**](guia.php)
+> **"De Coder a Arquitecto Backend — sin teoría de relleno, puro código real."**
+>
+> Plataforma académica interactiva desarrollada por **José Luis Choquevillca (ByChoke Studios)**. Cada proyecto incluye su propio **Manual Pedagógico Interactivo** con árbol de carpetas, explorador de código fuente y simulación de ejecución.
 
 ---
 
-## 🏗️ Estructura del Aprendizaje (Fases)
+## 🚀 Inicio Rápido
 
-El curso se divide en 5 hitos fundamentales, cada uno con una dificultad y temática específica:
+```bash
+# 1. Clonar el repositorio
+git clone https://github.com/ByChokeYT/php8-masterclass-portfolio.git
+cd php8-masterclass-portfolio
 
-| Fase | Título | Temática | Dificultad | Color |
-| :--- | :--- | :--- | :--- | :--- |
-| **01** | Fundamentos y Sintaxis | Lógica CLI, tipos, arrays y control. | 🟢 Inicial | Emerald |
-| **02** | UI/UX y Formularios | Tailwind CSS, $_POST/$_GET y Frontend. | 🔵 Intermedio | Cyan |
-| **03** | Persistencia y SQL | MySQL, PDO y Gestión de Datos. | 🟡 Desafío | Amber |
-| **04** | Arquitectura Moderna | APIs REST, POO avanzada y Patrones. | 🔴 Avanzado | Rose |
-| **05** | Ecosistema Real-World | Security, Deploy y Aplicaciones Pro. | 🟣 Experto | Violet |
+# 2. Instalar dependencias (opcional, para Composer)
+composer install
 
----
+# 3. Levantar el servidor local con el router incluido
+php -S localhost:8000 router.php
 
-## 📂 Índice de Proyectos (Fases 1, 2 y 3 Completadas)
+# 4. Abrir en el navegador
+# 👉 http://localhost:8000
+```
 
-### 🟢 Fase 1: Dominio de la Terminal
-- **Día 01:** [Calculadora Minerales](dia-01-calculadora-minerales/) - Evaluación de pureza en CLI.
-- **Día 02:** [Conversor Divisas](dia-02-conversor-divisas/) - Manejo de tipos de cambio.
-- **Día 03:** [Gestor Gastos](dia-03-gestor-gastos/) - Filtrado de logs de sistema.
-- **Día 04:** [Simulador Prestamos](dia-04-simulador-prestamos/) - Lógica matemática aplicada.
-- **Día 05:** [Calculadora Ime](dia-05-calculadora-imc/) - Formateo de datos JSON/CSV.
-- **Día 06:** [Reloj Tiempo Real](dia-06-reloj-tiempo-real/) - Generación de tokens seguros.
-- **Día 07:** [Analizador Texto](dia-07-analizador-texto/) - Manipulación de strings avanzada.
-- **Día 08:** [Adivina Numero](dia-08-adivina-numero/) - Estructuras de decisión y bucles.
-- **Día 09:** [Validador Email](dia-09-validador-email/) - Regex y limpieza de datos.
-- **Día 10:** [Simulador Cajero](dia-10-simulador-cajero/) - Simulación de estados complejos.
-
-### 🔵 Fase 2: UI/UX Industrial
-- **Día 11:** [Landing Page](dia-11-landing-page/) - Primeros pasos con Tailwind y PHP.
-- **Día 12:** [Formulario Cotizacion](dia-12-formulario-cotizacion/) - Datos dinámicos en tiempo real.
-- **Día 13:** [Recepcion RSVP](dia-13-recepcion-rsvp/) - Confirmaciones y validación POST.
-- **Día 14:** [Subida Archivos](dia-14-subida-archivos/) - Manejo seguro de archivos.
-- **Día 15:** [Video Previewer](dia-15-video-previewer/) - Galería dinámica por ID.
-- **Día 16:** [Login en Memoria](dia-16-login-en-memoria/) - Manejo de sesiones y seguridad.
-- **Día 17:** [Calculadora Liquidacion](dia-17-calculadora-liquidacion/) - Dashboard web profesional.
-- **Día 18:** [Markdown To Html](dia-18-markdown-to-html/) - Renderizado de contenido técnico.
-- **Día 19:** [Generador Tarjetas](dia-19-generador-tarjetas/) - Identidad profesional modular.
-- **Día 20:** [Encuesta Visual](dia-20-encuesta-visual/) - Persistencia manual .txt y AJAX.
-
-### 🟡 Fase 3: Persistencia y SQL
-- **Día 21:** [Conexion PDO](dia-21-conexion-pdo/) - Propiedades readonly y seguridad.
-- **Día 22:** [CRUD Invitados](dia-22-crud-invitados/) - Gestión completa de base de datos.
-- **Día 23:** [Inventario Minerales](dia-23-inventario-minerales/) - Transacciones y tablas industriales.
-- **Día 24:** [Registro Seguro](dia-24-registro-seguro/) - Hashing de contraseñas.
-- **Día 25:** [Gestor QR](dia-25-gestor-qr/) - Persistencia de URLs y metadatos.
-- **Día 26:** [Muro Comentarios](dia-26-muro-comentarios/) - Interacción pública con BD.
-- **Día 27:** [Catalogo Servicios](dia-27-catalogo-servicios/) - Renderizado dinámico desde SQL.
-- **Día 28:** [Buscador Contactos](dia-28-buscador-contactos/) - Filtros avanzados y LIKE.
-- **Día 29:** [Registro Gastos](dia-29-registro-gastos/) - Categorización y reportes simples.
-- **Día 30:** [Dashboard Admin](dia-30-dashboard-admin/) - Métricas y resúmenes de sistema.
-
-### 🔴 Fase 4: APIs y Librerías
-- **Día 31:** [Generador QR](dia-31-generador-qr/) - Integración de librerías externas.
-- **Día 32:** [Scraper Clima Oruro](dia-32-scraper-clima-oruro/) - Consumo de datos externos (Scraping).
-- **Día 33:** [Consumo API Metales](dia-33-consumo-api-metales/) - Mercado en tiempo real.
-- **Día 34:** [Generador PDF](dia-34-generador-pdf/) - Exportación de documentos (Dompdf).
-- **Día 35:** [Exportador Datos](dia-35-exportador-datos/) - Generación de CSV/Excel.
-- **Día 37:** [Acortador URL](dia-37-acortador-url/) - Gestión de redirecciones.
-- **Día 38:** [Login Sesiones](dia-38-login-sesiones/) - Autenticación y API RESTful.
-- **Día 39:** [Lector RSS](dia-39-lector-rss/) - Consumo de feeds XML (Tech/Mining).
-
-## 🚀 Cómo empezar (Universal)
-
-Esta academia es compatible con todos los sistemas operativos. Sigue estos pasos según tu entorno:
-
-### 1. Prerrequisitos
-Asegúrate de tener **PHP 8.2 o superior** instalado. Puedes verificarlo con `php -v`.
-
-| Sistema | Instrucción de Instalación Recomendada |
-| :--- | :--- |
-| **Windows** | Descarga [Laragon](https://laragon.org/) o [PHP for Windows](https://windows.php.net/download/). |
-| **macOS** | Usa Homebrew: `brew install php` |
-| **Linux** | Usa tu gestor de paquetes: `sudo apt install php` (Ubuntu/Debian) |
-
-### 2. Clonar y Ejecutar
-Independientemente de tu sistema, usa la terminal (CMD, PowerShell, iTerm o Bash):
-
-1. **Clona el repositorio:**
-   ```bash
-   git clone https://github.com/ByChokeYT/php8-masterclass-portfolio.git
-   ```
-2. **Entra al directorio:**
-   ```bash
-   cd php8-masterclass-portfolio
-   ```
-3. **Inicia el servidor educativo nativo:**
-   ```bash
-   php -S localhost:8000
-   ```
-
-### 3. Accede al Nexus
-Abre tu navegador habitual y entra en:
-👉 [**http://localhost:8000**](http://localhost:8000)
-
-Ahí encontrarás el **Academic Hub** con tu progreso visual y todos los proyectos listos para ser explorados.
+> **Requisito:** PHP 8.2 o superior. Verificar con `php -v`.
 
 ---
 
-## 🛠️ Tecnologías Masterclass
-- **PHP 8.5** (Match, Readonly Properties, Typed Parameters)
-- **Tailwind CSS v3.4** (Diseño Industrial & Proyecciones)
-- **Vanilla JavaScript** (Interactividad AJAX y Fetch)
-- **Phosphor Icons** (Simbología Técnica)
+## 🏗️ Arquitectura del Proyecto
+
+```
+php8-masterclass-portfolio/
+│
+├── content/                    # 38 proyectos del curso (cada uno autocontenido)
+│   ├── dia-1-calculadora-minerales/
+│   │   ├── index.php           ← Manual Pedagógico Interactivo
+│   │   ├── main.php            ← Punto de entrada CLI
+│   │   └── src/
+│   │       ├── Enums/
+│   │       ├── DTO/
+│   │       └── Services/
+│   └── dia-N-.../
+│
+├── public/                     # Front Controller y assets
+│   ├── index.php               ← Enrutador principal (Front Controller)
+│   └── assets/
+│       └── img/
+│           ├── logo.gif
+│           └── hero_elephant.png
+│
+├── src/                        # Núcleo del Hub
+│   ├── Core/
+│   │   ├── ProjectScanner.php  ← Escanea los 38 proyectos dinámicamente
+│   │   └── Performance.php     ← Métricas de carga
+│   └── Data/
+│       └── ProjectRepository.php ← Metadatos y configuración de fases
+│
+├── views/                      # Capa de presentación del Hub
+│   ├── layout.php              ← HTML base con design system
+│   ├── main.php                ← Orquestador de secciones
+│   └── sections/
+│       ├── hero.php            ← Sección principal
+│       ├── projects_grid.php   ← Grid Vue.js filtrable (38 proyectos)
+│       ├── mentor.php          ← Sección del instructor
+│       └── footer.php          ← Pie de página
+│
+├── templates/
+│   └── pedagogical_view.php    ← Plantilla base para los Manuales Pedagógicos
+│
+├── _nav.php                    ← Navbar global para los proyectos del curso
+├── router.php                  ← Router para PHP Built-in Server
+├── index.php                   ← Fallback al Front Controller
+├── .htaccess                   ← Rewrite rules para Apache
+└── composer.json
+```
 
 ---
 
-**Propiedad de By Choke // Academia Masterclass 2024**
-*"Construyendo el futuro del desarrollo PHP línea a línea, en cualquier plataforma."*
+## 📚 Plan de Estudios (5 Fases)
+
+### 🟢 Fase 1 — Fundamentos y Sintaxis (Días 01–10)
+> Lógica CLI, Tipado Estricto, OOP básica, Enums, DTOs, Sesiones y Excepciones.
+
+| Día | Proyecto | Conceptos Clave |
+|:---:|:---------|:----------------|
+| 01 | Calculadora de Minerales | `Strict_Types`, `Enums`, `Readonly DTOs`, `match` |
+| 02 | Calculadora IMC (CLI) | `Interfaces`, Aritmética entera, `mb_string` |
+| 03 | Gestor de Gastos | `$_SESSION`, Patrón PRG, `BudgetManager` Service |
+| 04 | Simulador de Préstamos | Amortización Francesa, algoritmos financieros |
+| 05 | Calculadora IMC Pro | `try-catch`, `filter_input`, manejo de excepciones |
+| 06 | Reloj en Tiempo Real | `DateTime`, `DateTimeZone`, PHP → JS handoff |
+| 07 | Analizador de Texto | `array_count_values`, `arsort`, `mb_strlen` |
+| 08 | Adivina el Número | Game Loop en HTTP stateless, `$_SESSION` |
+| 09 | Validador de Email | `FILTER_VALIDATE_EMAIL`, `checkdnsrr`, DNS MX |
+| 10 | Simulador de Cajero ATM | Lógica transaccional, excepciones de negocio |
+
+### 🔵 Fase 2 — UI/UX y Formularios (Días 11–20)
+> Tailwind CSS, `$_POST`/`$_GET`, formularios dinámicos, sesiones avanzadas.
+
+| Día | Proyecto | Conceptos Clave |
+|:---:|:---------|:----------------|
+| 11 | Landing Page | Tailwind CSS, HTML semántico |
+| 12 | Formulario de Cotización | Validación POST, arrays dinámicos |
+| 13 | Recepción RSVP | Confirmaciones, sanitización |
+| 14 | Subida de Archivos | `move_uploaded_file`, seguridad |
+| 15 | Video Previewer | Galería dinámica por ID |
+| 16 | Login en Memoria | `$_SESSION`, seguridad básica |
+| 17 | Calculadora de Liquidación | Dashboard web profesional |
+| 18 | Markdown to HTML | Parseo y renderizado de contenido |
+| 19 | Generador de Tarjetas | Exportación de identidad visual |
+| 20 | Encuesta Visual | Persistencia `.txt`, AJAX básico |
+
+### 🟡 Fase 3 — Persistencia y SQL (Días 21–30)
+> MySQL, PDO, CRUD completo, seguridad con hashing, transacciones.
+
+| Día | Proyecto | Conceptos Clave |
+|:---:|:---------|:----------------|
+| 21 | Conexión PDO | Patrón Singleton, prepared statements |
+| 22 | CRUD de Invitados | SQLite, operaciones completas |
+| 23 | Inventario de Minerales | SQL avanzado, filtros y reportes |
+| 24 | Registro Seguro | `password_hash`, `password_verify` |
+| 25 | Gestor QR | Persistencia de URLs con metadata |
+| 26 | Muro de Comentarios | Interacción pública con BD |
+| 27 | Catálogo de Servicios | Renderizado dinámico desde SQL |
+| 28 | Buscador de Contactos | `LIKE`, filtros avanzados |
+| 29 | Registro de Gastos | Categorización y reportes |
+| 30 | Dashboard Admin | Métricas agregadas |
+
+### 🔴 Fase 4 — Arquitectura Moderna (Días 31–39)
+> APIs REST, Composer, librerías externas, PDFs, XML/RSS.
+
+| Día | Proyecto | Conceptos Clave |
+|:---:|:---------|:----------------|
+| 31 | Generador QR | Composer, librerías externas |
+| 32 | Scraper del Clima | HTTP requests, scraping ético |
+| 33 | Consumo API Metales | REST API, JSON decoding |
+| 34 | Generador PDF | Dompdf, exportación documental |
+| 35 | Exportador CSV | `fputcsv`, formatos de intercambio |
+| 37 | Acortador de URL | Redirecciones, manejo de slugs |
+| 38 | Login con Sesiones | Auth completa, RBAC básico |
+| 39 | Lector RSS | Parsing XML, feeds externos |
+
+### 🟣 Fase 5 — Ecosistema Real-World
+> Seguridad avanzada, Deploy, APIs en producción.
+
+---
+
+## 🛠️ Stack Tecnológico
+
+| Capa | Tecnología | Uso |
+|:-----|:-----------|:----|
+| **Backend** | PHP 8.5 | Lógica, enrutamiento, manejo de proyectos |
+| **Frontend Hub** | Vue.js 3 (CDN) | Grid interactivo y filtrado de proyectos |
+| **Estilos** | Tailwind CSS (CDN) | Design system consistente |
+| **Íconos** | Phosphor Icons | Iconografía técnica |
+| **Dev Icons** | Devicon | Logos de tecnologías en las cards |
+| **Animaciones** | AOS.js | Scroll reveal animations |
+| **Fuentes** | Inter + JetBrains Mono | Tipografía profesional |
+| **Síntaxis** | Prism.js | Resaltado de código en Manuales |
+
+---
+
+## 🎓 ¿Qué es el Manual Pedagógico?
+
+Cada proyecto tiene una página de aprendizaje interactiva (`index.php` en la raíz de cada día) que incluye:
+
+1. **Árbol de Carpetas Interactivo** — haz clic en cualquier archivo para verlo
+2. **Explorador de Código** — con resaltado de sintaxis PHP (Prism.js)
+3. **Objetivos de Aprendizaje** — qué conceptos se dominan en ese día
+4. **Nota del Profesor** — el porqué de las decisiones de arquitectura
+5. **Terminal Simulada** — muestra la salida esperada del programa
+
+---
+
+## 👨‍🏫 El Instructor
+
+**José Luis Choquevillca** — Software Engineer & Mentor con 10+ años de experiencia en desarrollo backend con PHP, MySQL y arquitecturas de software empresarial.
+
+- 🌐 [Portafolio](https://bychokeportafolio.netlify.app/)
+- 💼 [LinkedIn](https://www.linkedin.com/in/jose-luis-choquevillca/)
+- 📧 choque151.jlc@gmail.com
+- 💬 WhatsApp: +591 62793829
+
+---
+
+## 📄 Licencia
+
+MIT License — © 2025 ByChoke Studios / José Luis Choquevillca.
+
+*"Construyendo el futuro del desarrollo PHP, línea a línea."*
