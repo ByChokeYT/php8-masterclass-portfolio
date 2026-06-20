@@ -3,7 +3,7 @@
 ![PHP](https://img.shields.io/badge/PHP-8.5-4F5B93?style=for-the-badge&logo=php&logoColor=white)
 ![Vue.js](https://img.shields.io/badge/Vue.js-3.x-4FC08D?style=for-the-badge&logo=vue.js&logoColor=white)
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind-CSS-38B2AC?style=for-the-badge&logo=tailwind-css)
-![Progreso](https://img.shields.io/badge/Proyectos-38%20%2F%2050-6366f1?style=for-the-badge)
+![Progreso](https://img.shields.io/badge/Proyectos-50%20%2F%2050-6366f1?style=for-the-badge)
 
 > **"De Coder a Arquitecto Backend — sin teoría de relleno, puro código real."**
 >
@@ -132,7 +132,7 @@ php8-masterclass-portfolio/
 | 29 | Registro de Gastos | Categorización y reportes |
 | 30 | Dashboard Admin | Métricas agregadas |
 
-### 🔴 Fase 4 — Arquitectura Moderna (Días 31–39)
+### 🔴 Fase 4 — Arquitectura Moderna (Días 31–40)
 > APIs REST, Composer, librerías externas, PDFs, XML/RSS.
 
 | Día | Proyecto | Conceptos Clave |
@@ -142,12 +142,27 @@ php8-masterclass-portfolio/
 | 33 | Consumo API Metales | REST API, JSON decoding |
 | 34 | Generador PDF | Dompdf, exportación documental |
 | 35 | Exportador CSV | `fputcsv`, formatos de intercambio |
+| 36 | Envío de Correos | `PHPMailer`, SMTP, Composer |
 | 37 | Acortador de URL | Redirecciones, manejo de slugs |
 | 38 | Login con Sesiones | Auth completa, RBAC básico |
 | 39 | Lector RSS | Parsing XML, feeds externos |
+| 40 | Backup de BD | Copias de seguridad de BD en PHP |
 
-### 🟣 Fase 5 — Ecosistema Real-World
+### 🟣 Fase 5 — Ecosistema Real-World (Días 41–50)
 > Seguridad avanzada, Deploy, APIs en producción.
+
+| Día | Proyecto | Conceptos Clave |
+|:---:|:---------|:----------------|
+| 41 | Enrutador MVC Básico | `MVC, Front Controller, Routing` |
+| 42 | Liquidación Normativa | `Business Logic, SQLite, SQL` |
+| 43 | Control de Acceso (RBAC) | `RBAC, Security, Role Management` |
+| 44 | Dashboard Analítico | `Chart.js, JSON, Data Visualization` |
+| 45 | Monitor de Servidores | `Network Ping, fsockopen, Status` |
+| 46 | Template Engine | `RegEx, Parser, Layout Separation` |
+| 47 | Autenticación con JWT | `JWT, Token-based Auth, APIs` |
+| 48 | Portafolio de Agencia | `CMS, CRUD, Custom Dashboard` |
+| 49 | Log de Auditoría | `Audit Trails, Security logging` |
+| 50 | El Ecosistema Integrado | `Full-stack, MVC, PDF, Auth` |
 
 ---
 
